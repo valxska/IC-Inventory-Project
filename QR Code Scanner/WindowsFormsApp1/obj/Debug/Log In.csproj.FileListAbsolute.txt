@@ -1,0 +1,19 @@
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\Main Admin.exe
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\QR Code Scanner.exe
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\WebCam_Capture.dll
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\MessagingToolkit.QRCode.dll
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\Main Admin.pdb
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\Main Admin.exe.config
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\QR Code Scanner.pdb
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\bin\Debug\QR Code Scanner.xml
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\obj\Debug\Log In.csprojAssemblyReference.cache
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LogInForm.resources
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\obj\Debug\Log In.csproj.GenerateResource.cache
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\obj\Debug\Log In.csproj.CoreCompileInputs.cache
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\obj\Debug\Log In.csproj.CopyComplete
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\nsdixonl\Downloads\QR Code Scanner\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
