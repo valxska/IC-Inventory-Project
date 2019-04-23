@@ -185,8 +185,71 @@ namespace QRbackend
 
             }
 
+            public bool AddPerson(String pId, String pPersonName, String pPersonLastname, String pType, int pAuthorized, String pWwid, String pPassword)
+            {
+                MySqlCommand code = new MySqlCommand();
+                code.Connection = this.connection;
 
-        }
+                code.CommandText = ("Select idPerson From person where id = '" + pId + "' ");
+
+                string TipoPersona = ("Select idPersonalType From TypePerson where nombre = '" + pType + "' ");
+
+                AddUser(pWwid, pPassword); //Añade el usuario a la bd. Recibe la contraseña y el wwid
+                string Usuario = ("Select idUser From user where wwid = '" + pWwid + "' ");
+
+               
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+
+                if (rdr.Read())
+                {
+                    this.connection.Close();
+                    return true;
+                }
+                else
+                {
+                    code.CommandText = ("Insert Into person  (pId, personname, personlastname, typerson, availabled, authorized, idUser) Values ('" + pId + "' , '" + pPersonName + "' , '" +  pPersonLastname + "', " + TipoPersona + " , 1 , '" + pAuthorized);
+                    this.connection.Close();
+                    return false;
+                }
+            }
+
+            public bool AddUser(String pWwid, String pPassword)
+            {
+                this.connection.Open();
+
+
+                MySqlCommand code = new MySqlCommand();
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select idUser From user where wwid = '" + pWwid + "' ");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+
+                if (rdr.Read())
+                {
+                    this.connection.Close();
+                    return false;   // No se agrega porque ya existe
+                }
+                else
+                {
+
+                    this.connection.Close();
+                    this.connection.Open();
+                    code.Connection = this.connection;
+
+                    code.CommandText = ("Insert Into user (wwwid,password) Values ('" + pWwid + "','" + pPassword + "') ");
+                    code.ExecuteReader();
+                    this.connection.Close();
+
+
+                    return true;  //Se agrega porque no existe
+
+                }
+
+            }
 
     }
 }
