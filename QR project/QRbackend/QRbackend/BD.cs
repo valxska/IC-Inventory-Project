@@ -38,10 +38,11 @@ namespace QRbackend
             }
 
             
-
-
+            
         }
-        //Terminar
+
+
+        //Falta Probar
         public bool AddDevice(String pQR, String pSerialCode, int pPrice, String pDescription, String pBrandName, String pEstateName, String pCategory)
         {
 
@@ -59,7 +60,8 @@ namespace QRbackend
             code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('"+ pQR +"' , '"+ pSerialCode +"', '"+ pPrice +"', '"+ pDescription + "', @idBrand, 1, @idEstate ");
             //code.ExecuteNonQuery();
 
-            
+            this.connection.Open();
+            this.connection.Close();
             MySqlDataReader rdr = code.ExecuteReader();
 
 
@@ -113,7 +115,7 @@ namespace QRbackend
             }
 
 
-        public bool  AddEstate(String pEstateName)
+        public void  AddEstate(String pEstateName)
         {
             this.connection.Open();
 
@@ -129,7 +131,7 @@ namespace QRbackend
             if (rdr.Read())
             {
                 this.connection.Close();
-                return false;
+                //return false;
               
             }
             else
@@ -142,7 +144,7 @@ namespace QRbackend
                 code.ExecuteReader();
                 this.connection.Close();
 
-                return true;
+                //return true;
 
             }
 
