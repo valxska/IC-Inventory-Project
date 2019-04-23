@@ -142,5 +142,42 @@ namespace QRbackend
 
         }
 
+        public bool AddCategory(String pCategoryName)
+        {
+            this.connection.Open();
+
+
+            MySqlCommand code = new MySqlCommand();
+            code.Connection = this.connection;
+
+            code.CommandText = ("Select idCategory From category where categoryName = '" + pCategoryName + "' ");
+
+            MySqlDataReader rdr = code.ExecuteReader();
+
+
+            if (rdr.Read())
+            {
+                this.connection.Close();
+                return false;   // No se agrega porque ya existe
+            }
+            else
+            {
+
+                this.connection.Close();
+                this.connection.Open();
+                code.Connection = this.connection;
+
+                code.CommandText = ("Insert Into category (categoryName) Values ('" + pcategoryName + "') ");
+                code.ExecuteReader();
+                this.connection.Close();
+
+
+                return true;  //Se agrega porque no existe
+
+            }
+
+
+        }
+
     }
 }
