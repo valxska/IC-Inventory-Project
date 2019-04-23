@@ -42,16 +42,18 @@ namespace QRbackend
 
         }
         //Terminar
-        public void AddDevice(String pQR, String pSerialCode, String pPrice, String pDescription, String pBrand, String pEstate, String pCategory)
+        public bool AddDevice(String pQR, String pSerialCode, int pPrice, String pDescription, String pBrand, String pEstate, String pCategory)
         {
             MySqlCommand code = new MySqlCommand();
             code.Connection = this.connection;
 
-
             AddBrand(pBrand);
-            y.CommandText = ("Select idBrand From brand where brandName = '" + pBrandName + "' ");
+            string x = ("Select idBrand From brand where brandName = '" + pBrand + "' ");
 
-            //code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('"+ pQR +"' , '"+ pSerialCode +"', "+ pPrice +", '"+ pDescription +"', "+ idBrand+", 1 , "+ idEstate);
+            AddEstate(pEstate);
+            string y = ("Select idEstate From estate where EstateName = '" + pEstate + "' ");
+
+            code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('"+ pQR +"' , '"+ pSerialCode +"', "+ pPrice +", '"+ pDescription +"', "+ x +", 1 , "+ idEstate);
 
             MySqlDataReader rdr = code.ExecuteReader();
 
@@ -59,17 +61,17 @@ namespace QRbackend
             if (rdr.Read())
             {
                 this.connection.Close();
-                //return true;
+                return true;
             }
             else
             {
                 this.connection.Close();
-                //return false;
+                return false;
             }
         }
 
         // La funcion va devolver el id del nombre brindado como parametro de la marca. Para poder insertarlo en Add device.
-        public bool AddBrand (String pBrandName)
+        public void AddBrand (String pBrandName)
             {
             this.connection.Open();
 
@@ -85,7 +87,7 @@ namespace QRbackend
                 if (rdr.Read())
                 {
                     this.connection.Close();
-                    return false;   // No se agrega porque ya existe
+                    //return false;   // No se agrega porque ya existe
                 }
                 else
                 {
@@ -99,7 +101,7 @@ namespace QRbackend
                     this.connection.Close();
 
                    
-                    return true;  //Se agrega porque no existe
+                    //return true;  //Se agrega porque no existe
 
                  }
                 
