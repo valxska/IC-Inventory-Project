@@ -18,14 +18,16 @@ namespace QRbackend
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             BD PruebaDeBD = new BD();
-            bool x = PruebaDeBD.AddEstate("Excelente");
+            bool x = PruebaDeBD.AddEstate("Malo");
+            MessageBox.Show(x.ToString());
+
             if (x) {
 
-                MessageBox.Show("Funcionó");
+                MessageBox.Show("Funcionó");  //Se insertó
             }
             else
             {
-                MessageBox.Show("No funcionó");
+                MessageBox.Show("No funcionó");  // No se insertó porque ya existía
             }
            
 

@@ -42,10 +42,14 @@ namespace QRbackend
 
         }
         //Terminar
-        public void AddDevice(String pQR, String pSerialCode, String pPrice, String pDescription, String PBrand, String pEstate, String pCategory)
+        public void AddDevice(String pQR, String pSerialCode, String pPrice, String pDescription, String pBrand, String pEstate, String pCategory)
         {
             MySqlCommand code = new MySqlCommand();
             code.Connection = this.connection;
+
+
+            AddBrand(pBrand);
+            y.CommandText = ("Select idBrand From brand where brandName = '" + pBrandName + "' ");
 
             //code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('"+ pQR +"' , '"+ pSerialCode +"', "+ pPrice +", '"+ pDescription +"', "+ idBrand+", 1 , "+ idEstate);
 
@@ -64,7 +68,8 @@ namespace QRbackend
             }
         }
 
-        public bool AddBrand(String pBrandName)
+        // La funcion va devolver el id del nombre brindado como parametro de la marca. Para poder insertarlo en Add device.
+        public bool AddBrand (String pBrandName)
             {
             this.connection.Open();
 
@@ -76,29 +81,33 @@ namespace QRbackend
 
             MySqlDataReader rdr = code.ExecuteReader();
 
+         
+                if (rdr.Read())
+                {
+                    this.connection.Close();
+                    return false;   // No se agrega porque ya existe
+                }
+                else
+                {
 
-            if (rdr.Read())
-            {
-                this.connection.Close();
-                return false;
-            }
-            else
-            {
-                this.connection.Close();
-                this.connection.Open();
-                code.Connection = this.connection;
+                    this.connection.Close();
+                    this.connection.Open();
+                    code.Connection = this.connection;
 
-                code.CommandText = ("Insert Into brand (brandName) Values ('" + pBrandName + "') ");
-                code.ExecuteReader();
-                this.connection.Close();
+                    code.CommandText = ("Insert Into brand (brandName) Values ('" + pBrandName + "') ");
+                    code.ExecuteReader();
+                    this.connection.Close();
 
-                return true;
+                   
+                    return true;  //Se agrega porque no existe
+
+                 }
                 
+                                
             }
 
-        }
 
-        public bool AddEstate(String pEstateName)
+        public bool  AddEstate(String pEstateName)
         {
             this.connection.Open();
 
@@ -115,6 +124,7 @@ namespace QRbackend
             {
                 this.connection.Close();
                 return false;
+              
             }
             else
             {
