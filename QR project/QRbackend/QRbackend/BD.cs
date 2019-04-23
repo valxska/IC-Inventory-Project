@@ -49,8 +49,8 @@ namespace QRbackend
             MySqlCommand code = new MySqlCommand();
             code.Connection = this.connection;
 
-            AddBrand(pBrandName);
-            code.Parameters.AddWithValue ("@idBrand", "Select idBrand From brand where brandName = '" + pBrandName + "' ");
+            AddBrand(pBrandName);  // Prueba: abrir funcion AddBrand para verificar si la marca ya existe o si se debe agregar a la tabla Brand.
+            code.Parameters.AddWithValue ("@idBrand", "Select idBrand From brand where brandName = '" + pBrandName + "' ");  //Guarda el idBrand para insertarlo en la tabla Device.
 
             AddEstate(pEstateName);
             code.Parameters.AddWithValue("@idEstate", "Select idEstate From estate where EstateName = '" + pEstateName + "' ");
@@ -59,14 +59,13 @@ namespace QRbackend
             code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('"+ pQR +"' , '"+ pSerialCode +"', '"+ pPrice +"', '"+ pDescription + "', @idBrand, 1, @idEstate ");
             //code.ExecuteNonQuery();
 
-            this.connection.Close();
-            code.Connection = this.connection;
-
+            
             MySqlDataReader rdr = code.ExecuteReader();
 
 
             if (rdr.Read())
             {
+                this.connection.Open();
                 this.connection.Close();
                 return true;
             }
@@ -77,12 +76,10 @@ namespace QRbackend
             }
         }
 
-        // La funcion va devolver el id del nombre brindado como parametro de la marca. Para poder insertarlo en Add device.
+
         public void AddBrand (String pBrandName)
             {
-            //this.connection.Open();
-
-
+        
             MySqlCommand code = new MySqlCommand();
             code.Connection = this.connection;
 
@@ -184,21 +181,23 @@ namespace QRbackend
                 return true;  //Se agrega porque no existe
 
             }
+        }
 
-            public bool AddPerson(String pId, String pPersonName, String pPersonLastname, String pType, int pAuthorized, String pWwid, String pPassword)
+            public bool AddPerson(String pId, String pPersonName, String pPersonLastname, String pType, int pAuthorized, int pidUser)
             {
                 MySqlCommand code = new MySqlCommand();
                 code.Connection = this.connection;
 
+                
+                string TipoPersona = ("Select idPersonalType From PersonalType where nombre = '" + pType + "' ");
+
+            //AddUser(pWwid, pPassword); //Añade el usuario a la bd. Recibe la contraseña y el wwid
+            //string Usuario = ("Select idUser From user where wwid = '" + pWwid + "' ");
+
+
                 code.CommandText = ("Select idPerson From person where id = '" + pId + "' ");
-
-                string TipoPersona = ("Select idPersonalType From TypePerson where nombre = '" + pType + "' ");
-
-                AddUser(pWwid, pPassword); //Añade el usuario a la bd. Recibe la contraseña y el wwid
-                string Usuario = ("Select idUser From user where wwid = '" + pWwid + "' ");
-
-               
-
+                this.connection.Close();
+                this.connection.Open();
                 MySqlDataReader rdr = code.ExecuteReader();
 
 
@@ -209,11 +208,12 @@ namespace QRbackend
                 }
                 else
                 {
-                    code.CommandText = ("Insert Into person  (pId, personname, personlastname, typerson, availabled, authorized, idUser) Values ('" + pId + "' , '" + pPersonName + "' , '" +  pPersonLastname + "', " + TipoPersona + " , 1 , '" + pAuthorized);
+                    code.CommandText = ("Insert Into person  (ID, personname, personlastname, idType, availabled, authorized, idUser) Values ('" + pId + "' , '" + pPersonName + "' , '" +  pPersonLastname + "', '" + TipoPersona + "' , '1' , '" + pAuthorized +"', '1' ");
                     this.connection.Close();
                     return false;
                 }
             }
+
 
             public bool AddUser(String pWwid, String pPassword)
             {
