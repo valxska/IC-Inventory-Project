@@ -17,8 +17,8 @@ namespace QRbackend
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            BD PruebaDeLogIn = new BD();
-            bool x = PruebaDeLogIn.AddBrand("Alienware");
+            BD PruebaDeBD = new BD();
+            bool x = PruebaDeBD.AddEstate("Excelente");
             if (x) {
 
                 MessageBox.Show("Funcionó");
