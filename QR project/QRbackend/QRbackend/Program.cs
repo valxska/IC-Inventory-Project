@@ -18,7 +18,7 @@ namespace QRbackend
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             BD PruebaDeBD = new BD();
-            bool x = PruebaDeBD.AddDevice("ABC", "ABCD", 10000, "Nuevo device", "Mac", "Malo" ");
+            bool x = PruebaDeBD.AddDevice("ABC", "ABCD", 10000, "Nuevo device", "Mac", "Malo", "Computadoras");
             MessageBox.Show(x.ToString());
 
             if (x) {

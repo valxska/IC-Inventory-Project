@@ -42,18 +42,25 @@ namespace QRbackend
 
         }
         //Terminar
-        public bool AddDevice(String pQR, String pSerialCode, int pPrice, String pDescription, String pBrand, String pEstate, String pCategory)
+        public bool AddDevice(String pQR, String pSerialCode, int pPrice, String pDescription, String pBrandName, String pEstateName, String pCategory)
         {
+
+            this.connection.Open();
             MySqlCommand code = new MySqlCommand();
             code.Connection = this.connection;
 
-            AddBrand(pBrand);
-            string x = ("Select idBrand From brand where brandName = '" + pBrand + "' ");
+            AddBrand(pBrandName);
+            code.Parameters.AddWithValue ("@idBrand", "Select idBrand From brand where brandName = '" + pBrandName + "' ");
 
-            AddEstate(pEstate);
-            string y = ("Select idEstate From estate where EstateName = '" + pEstate + "' ");
+            AddEstate(pEstateName);
+            code.Parameters.AddWithValue("@idEstate", "Select idEstate From estate where EstateName = '" + pEstateName + "' ");
 
-            code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('"+ pQR +"' , '"+ pSerialCode +"', "+ pPrice +", '"+ pDescription +"', "+ x +", 1 , "+ idEstate);
+           
+            code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('"+ pQR +"' , '"+ pSerialCode +"', '"+ pPrice +"', '"+ pDescription + "', @idBrand, 1, @idEstate ");
+            //code.ExecuteNonQuery();
+
+            this.connection.Close();
+            code.Connection = this.connection;
 
             MySqlDataReader rdr = code.ExecuteReader();
 
@@ -73,7 +80,7 @@ namespace QRbackend
         // La funcion va devolver el id del nombre brindado como parametro de la marca. Para poder insertarlo en Add device.
         public void AddBrand (String pBrandName)
             {
-            this.connection.Open();
+            //this.connection.Open();
 
 
             MySqlCommand code = new MySqlCommand();
@@ -169,7 +176,7 @@ namespace QRbackend
                 this.connection.Open();
                 code.Connection = this.connection;
 
-                code.CommandText = ("Insert Into category (categoryName) Values ('" + pcategoryName + "') ");
+                code.CommandText = ("Insert Into category (categoryName) Values ('" + pCategoryName + "') ");
                 code.ExecuteReader();
                 this.connection.Close();
 
