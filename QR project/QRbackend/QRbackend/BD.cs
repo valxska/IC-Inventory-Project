@@ -46,13 +46,12 @@ namespace QRbackend
         //Genera fallas
         public bool AddDevice(String pQR, String pSerialCode, int pPrice, String pDescription, String pBrandName, String pEstateName, String pCategory)
         {
-
+        
             this.connection.Open();
             MySqlCommand code = new MySqlCommand();
             code.Connection = this.connection;
 
-            AddBrand(pBrandName);  // Prueba: abrir funcion AddBrand para verificar si la marca ya existe o si se debe agregar a la tabla Brand.
-            code.Parameters.AddWithValue("@idBrand", "Select idBrand From brand where brandName = '" + pBrandName + "' ");  //Guarda el idBrand para insertarlo en la tabla Device.
+            int idBrand = VerifyBrand(pBrandName)[0];
 
             AddEstate(pEstateName);
             code.Parameters.AddWithValue("@idEstate", "Select idEstate From estate where EstateName = '" + pEstateName + "' ");
@@ -81,7 +80,7 @@ namespace QRbackend
 
         public List<int> VerifyBrand(String pBrandName)
         {
-            List<int> intList = new List<int>();
+            List<int> rowList = new List<int>();
             try
             {
                 
@@ -96,10 +95,10 @@ namespace QRbackend
 
                 while (rdr.Read())
                 {
-                    intList.Add(rdr.GetInt32(0));
+                    rowList.Add(rdr.GetInt32(0));
                     
                 }
-                if (intList.Count == 0)
+                if (rowList.Count == 0)
                 {
                     this.connection.Close();
                     AddBrand(pBrandName);                    
@@ -112,7 +111,7 @@ namespace QRbackend
             {
                 this.connection.Close();
             }
-            return intList;
+            return rowList;
             
 
         }
@@ -138,42 +137,63 @@ namespace QRbackend
             return false;
         }
 
-
-
-        public bool AddEstate(String pEstateName)
+        public bool AddEstate(string pEstateName)
         {
-            this.connection.Open();
-
-
-            MySqlCommand code = new MySqlCommand();
-            code.Connection = this.connection;
-
-            code.CommandText = ("Select idEstate From estate where EstateName = '" + pEstateName + "' ");
-
-            MySqlDataReader rdr = code.ExecuteReader();
-
-
-            if (rdr.Read())
+            try
             {
-                this.connection.Close();
-                //return false;
-              
-                return false;
-
-            }
-            else
-            {
-                this.connection.Close();
+                MySqlCommand code = new MySqlCommand();
                 this.connection.Open();
                 code.Connection = this.connection;
 
-                code.CommandText = ("Insert Into estate (EstateName) Values ('" + pEstateName + "') ");
+                code.CommandText = ("Insert Into estate (EstateName) Values ('" + pEstateName + "')");
                 code.ExecuteReader();
                 this.connection.Close();
-
                 return true;
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return false;
+        }
+
+
+        public List<int> VerifyEstate(String pEstateName)
+        {
+
+            List<int> rowList = new List<int>();
+            try
+            {
+
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select idEstate From estate where EstateName = '" + pEstateName + "'");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetInt32(0));
+
+                }
+                if (rowList.Count == 0)
+                {
+                    this.connection.Close();
+                    AddEstate(pEstateName);
+                    return VerifyEstate(pEstateName);
+
+                }
 
             }
+            finally
+            {
+                this.connection.Close();
+            }
+            return rowList;
+                                    
 
         }
 
