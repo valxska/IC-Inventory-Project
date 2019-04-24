@@ -44,36 +44,70 @@ namespace QRbackend
 
         //Falta Probar
         //Genera fallas
-        public bool AddDevice(String pQR, String pSerialCode, int pPrice, String pDescription, String pBrandName, String pEstateName, String pCategory)
+
+        public List<int> VerifyDevice(string pQR)
         {
-        
-            this.connection.Open();
-            MySqlCommand code = new MySqlCommand();
-            code.Connection = this.connection;
 
-            int idBrand = VerifyBrand(pBrandName)[0];
+            List<int> rowList = new List<int>();
+            try
+            {
 
-            AddEstate(pEstateName);
-            code.Parameters.AddWithValue("@idEstate", "Select idEstate From estate where EstateName = '" + pEstateName + "' ");
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select QR From device where QR = '" + pQR + "' ");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetInt32(0));
+
+                }
+                if (rowList.Count == 0)
+                {
+                    this.connection.Close();
+                    //AddDevice(pQR);       Se ocupa terminar esta linea
+                    return VerifyDevice(pQR);
+
+                }
+
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return rowList;
 
 
-            code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('" + pQR + "' , '" + pSerialCode + "', '" + pPrice + "', '" + pDescription + "', @idBrand, 1, @idEstate ");
-            code.ExecuteNonQuery();
+        }
 
-            
-            MySqlDataReader rdr = code.ExecuteReader();
-
-
-            if (rdr.Read())
+        public bool AddDevice(String pQR, String pSerialCode, float pPrice, String pDescription, String pBrandName, String pEstateName, String pCategory)   //
+        {
+            try
             {
                 this.connection.Open();
-                this.connection.Close();
-                return true;
+                MySqlCommand code = new MySqlCommand();
+                code.Connection = this.connection;
+
+                int idBrand = VerifyBrand(pBrandName)[0];
+                int idEstate = VerifyEstate(pEstateName)[0];
+
+
+                code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('" + pQR + "' , '" + pSerialCode + "', " + pPrice + ", '" + pDescription + "', " + idBrand + ", 1, " + idEstate);
+                code.ExecuteNonQuery();
+
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+
             }
-            else
+            finally
             {
                 this.connection.Close();
-                return false;
+
             }
         }
 
