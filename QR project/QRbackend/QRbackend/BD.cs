@@ -37,21 +37,13 @@ namespace QRbackend
                 return false;
             }
 
-<<<<<<< HEAD
-            
-            
+
+                        
         }
 
 
         //Falta Probar
-=======
-
-
-
-        }
-        //Terminar
         //Genera fallas
->>>>>>> 69a590844f1a5d18d95fc206381d8685cf5a703d
         public bool AddDevice(String pQR, String pSerialCode, int pPrice, String pDescription, String pBrandName, String pEstateName, String pCategory)
         {
 
@@ -67,14 +59,9 @@ namespace QRbackend
 
 
             code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('" + pQR + "' , '" + pSerialCode + "', '" + pPrice + "', '" + pDescription + "', @idBrand, 1, @idEstate ");
-            //code.ExecuteNonQuery();
+            code.ExecuteNonQuery();
 
-<<<<<<< HEAD
-            this.connection.Open();
-            this.connection.Close();
-=======
-
->>>>>>> 69a590844f1a5d18d95fc206381d8685cf5a703d
+            
             MySqlDataReader rdr = code.ExecuteReader();
 
 
@@ -92,47 +79,68 @@ namespace QRbackend
         }
 
 
-        public void AddBrand(String pBrandName)
+        public List<int> VerifyBrand(String pBrandName)
         {
-
-            MySqlCommand code = new MySqlCommand();
-            code.Connection = this.connection;
-
-            code.CommandText = ("Select idBrand From brand where brandName = '" + pBrandName + "' ");
-
-            MySqlDataReader rdr = code.ExecuteReader();
-
-
-            if (rdr.Read())
+            List<int> intList = new List<int>();
+            try
             {
-                this.connection.Close();
-                //return false;   // No se agrega porque ya existe
+                
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select idBrand From brand where brandName = '" + pBrandName + "' ");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    intList.Add(rdr.GetInt32(0));
+                    
+                }
+                if (intList.Count == 0)
+                {
+                    this.connection.Close();
+                    AddBrand(pBrandName);                    
+                    return VerifyBrand(pBrandName);
+                
+                }
+
             }
-            else
+            finally
             {
-
                 this.connection.Close();
+            }
+            return intList;
+            
+
+        }
+
+
+        public bool AddBrand(string pBrandName)
+        {
+            try
+            {
+                MySqlCommand code = new MySqlCommand();
                 this.connection.Open();
                 code.Connection = this.connection;
 
                 code.CommandText = ("Insert Into brand (brandName) Values ('" + pBrandName + "') ");
                 code.ExecuteReader();
                 this.connection.Close();
-
-
-                //return true;  //Se agrega porque no existe
-
+                return true;
             }
-
-
-<<<<<<< HEAD
-        public void  AddEstate(String pEstateName)
-=======
+            finally
+            {
+                this.connection.Close();
+            }
+            return false;
         }
 
 
+
         public bool AddEstate(String pEstateName)
->>>>>>> 69a590844f1a5d18d95fc206381d8685cf5a703d
         {
             this.connection.Open();
 
@@ -148,13 +156,10 @@ namespace QRbackend
             if (rdr.Read())
             {
                 this.connection.Close();
-<<<<<<< HEAD
                 //return false;
               
-=======
                 return false;
 
->>>>>>> 69a590844f1a5d18d95fc206381d8685cf5a703d
             }
             else
             {
@@ -166,7 +171,7 @@ namespace QRbackend
                 code.ExecuteReader();
                 this.connection.Close();
 
-                //return true;
+                return true;
 
             }
 

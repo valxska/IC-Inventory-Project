@@ -18,17 +18,17 @@ namespace QRbackend
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             BD PruebaDeBD = new BD();
-            bool x = PruebaDeBD.AddDevice("ABC", "ABCD", 10, "Prueba", "HP", "Maso", "Computadoras");
-            MessageBox.Show(x.ToString());
+            List<int> x = PruebaDeBD.VerifyBrand("Cisco");
+            MessageBox.Show(x[0].ToString());
 
-            if (x) {
+            /*if (x) {
 
                 MessageBox.Show("Funcionó");  //Se insertó
             }
             else
             {
                 MessageBox.Show("No funcionó");  // No se insertó porque ya existía
-            }
+            }*/
            
 
         }
