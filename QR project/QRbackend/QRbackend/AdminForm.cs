@@ -16,5 +16,10 @@ namespace QRbackend
         {
             InitializeComponent();
         }
+
+        private void internoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
