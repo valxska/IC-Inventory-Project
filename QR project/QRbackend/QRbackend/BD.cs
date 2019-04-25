@@ -234,82 +234,132 @@ namespace QRbackend
         //AÑADIR Categorias para ser relacionadas con un device
         //Recibe el nombre de la categoria
         //Realizado por: Nakisha Dixon el 4/23/19
+        //Modificado el 25/04/19
         //falta probar
-
-        public bool AddCategory(String pCategoryName)
+        public List<int> VerifyCategory(String pCategoryName)
         {
-            this.connection.Open();
-
-
-            MySqlCommand code = new MySqlCommand();
-            code.Connection = this.connection;
-
-            code.CommandText = ("Select idCategory From category where categoryName = '" + pCategoryName + "' ");
-
-            MySqlDataReader rdr = code.ExecuteReader();
-
-
-            if (rdr.Read())
+            List<int> rowList = new List<int>();
+            try
             {
-                this.connection.Close();
-                return false;   // No se agrega porque ya existe
+
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select idCategory From category where categoryName = '" + pCategoryName + "' ");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetInt32(0));
+
+                }
+                if (rowList.Count == 0)
+                {
+                    this.connection.Close();
+                    AddCategory(pCategoryName);
+                    return VerifyCategory(pCategoryName);
+
+                }
+
             }
-            else
+            finally
             {
-
                 this.connection.Close();
+            }
+            return rowList;
+
+
+        }
+
+        //Se utilizo el mismo metodo para añadir state en esta funcion.
+        //Y se elimino el metodo anterior
+        public bool AddCategory(string pCategoryName)
+        {
+            try
+            {
+                MySqlCommand code = new MySqlCommand();
                 this.connection.Open();
                 code.Connection = this.connection;
 
                 code.CommandText = ("Insert Into category (categoryName) Values ('" + pCategoryName + "') ");
                 code.ExecuteReader();
                 this.connection.Close();
-
-
-                return true;  //Se agrega porque no existe
-
+                return true;
             }
+            finally
+            {
+                this.connection.Close();
+            }
+            return false;
         }
+
 
         //AÑADIR email PERTENECIENTE A una PERSONA
         //Recibe el email
         //Realizado por: Nakisha Dixon el 4/23/19
         //falta probar
-
-        public bool AddEmail(String pEmail)
+        public List<int> VerifyEmail(String pEmail)
         {
-            this.connection.Open();
-
-
-            MySqlCommand code = new MySqlCommand();
-            code.Connection = this.connection;
-
-            code.CommandText = ("Select idEmail From email where email = '" + pEmail + "' ");
-
-            MySqlDataReader rdr = code.ExecuteReader();
-
-
-            if (rdr.Read())
+            List<int> rowList = new List<int>();
+            try
             {
-                this.connection.Close();
-                return false;   // No se agrega porque ya existe
+
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select idEmail From email where email = '" + pEmail + "' ");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetInt32(0));
+
+                }
+                if (rowList.Count == 0)
+                {
+                    this.connection.Close();
+                    Addemail(pEmail);
+                    return VerifyEmail(pEmail);
+
+                }
+
             }
-            else
+            finally
             {
-
                 this.connection.Close();
+            }
+            return rowList;
+
+
+        }
+
+        //Se utilizo el 
+        public bool AddEmail(string pEmail)
+        {
+            try
+            {
+                MySqlCommand code = new MySqlCommand();
                 this.connection.Open();
                 code.Connection = this.connection;
 
                 code.CommandText = ("Insert Into email (email) Values ('" + pEmail + "') ");
                 code.ExecuteReader();
                 this.connection.Close();
-
-
-                return true;  //Se agrega porque no existe
-
+                return true;
             }
+            finally
+            {
+                this.connection.Close();
+            }
+            return false;
         }
+    
 
         //AÑADIR NUMEROS TELEFONICOS PERTENECIENTES A LAS PERSONAS
         //Recibe el numero de telefono
