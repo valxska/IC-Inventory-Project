@@ -394,38 +394,27 @@ namespace QRbackend
         //falta probar
         public bool AddPhone(String pPhone)
         {
-            this.connection.Open();
-
-
-            MySqlCommand code = new MySqlCommand();
-            code.Connection = this.connection;
-
-            code.CommandText = ("Select idPhone From phone where phone = '" + pPhone + "' ");
-
-            MySqlDataReader rdr = code.ExecuteReader();
-
-
-            if (rdr.Read())
+            try
             {
-                this.connection.Close();
-                return false;   // No se agrega porque ya existe
-            }
-            else
-            {
-
-                this.connection.Close();
+                MySqlCommand code = new MySqlCommand();
                 this.connection.Open();
                 code.Connection = this.connection;
 
-                code.CommandText = ("Insert Into phone (phone) Values ('" + pPhone + "') ");
+                code.CommandText = ("Insert Into phone(phone) Values('" + pPhone + "') ");
                 code.ExecuteReader();
                 this.connection.Close();
+                return true;
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return false;
 
-
-                return true;  //Se agrega porque no existe
+      
 
             }
-        }
+        
 
         //AÑADIR PERSONAS
         //Recibe la identificacion de la persona, el nombre, apellido, tipo de persona (interno o externo), autorizacion (1,0) y el id de su usuario
