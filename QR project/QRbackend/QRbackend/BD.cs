@@ -323,11 +323,27 @@ namespace QRbackend
             return false;
         }
 
+        public bool AddEventType(string pEventType)
+        {
+            try
+            {
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+                code.Connection = this.connection;
 
-        //AÑADIR email PERTENECIENTE A una PERSONA
-        //Recibe el email
-        //Realizado por: Nakisha Dixon el 4/23/19
-        //falta probar
+                code.CommandText = ("Insert Into eventtype (name) Values ('" + pEventType +"') ");
+                code.ExecuteReader();
+                this.connection.Close();
+                return true;
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return false;
+        }
+
+       
         public List<int> VerifyEmail(String pEmail)
         {
             List<int> rowList = new List<int>();
@@ -388,10 +404,6 @@ namespace QRbackend
         }
     
 
-        //AÑADIR NUMEROS TELEFONICOS PERTENECIENTES A LAS PERSONAS
-        //Recibe el numero de telefono
-        //Realizado por: Nakisha Dixon el 4/23/19
-        //falta probar
         public bool AddPhone(String pPhone)
         {
             try
@@ -415,11 +427,7 @@ namespace QRbackend
 
             }
         
-
-        //AÑADIR PERSONAS
-        //Recibe la identificacion de la persona, el nombre, apellido, tipo de persona (interno o externo), autorizacion (1,0) y el id de su usuario
-        //Realizado por: Nakisha Dixon el 4/23/19
-            //No se ha probado
+        
         public bool AddPerson(String pId, String pPersonName, String pPersonLastname, String pType, int pAuthorized, int pidUser)
             {
                 MySqlCommand code = new MySqlCommand();
@@ -451,10 +459,7 @@ namespace QRbackend
                 }
             }
 
-        //AÑADIR el usuario de una persona
-        //Recibe el wwid y la contraseña
-        //Realizado por: Nakisha Dixon el 4/23/19
-        //Falta probar
+        
         public bool AddUser(String pWwid, String pPassword)
             {
                 this.connection.Open();
