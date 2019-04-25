@@ -41,9 +41,7 @@ namespace QRbackend
                         
         }
 
-
-        //Falta Probar
-        //Genera fallas
+        
 
         public List<int> VerifyDevice(string pQR)
         {
@@ -57,7 +55,7 @@ namespace QRbackend
 
                 code.Connection = this.connection;
 
-                code.CommandText = ("Select QR From device where QR = '" + pQR + "' ");
+                code.CommandText = ("Select idDevices From devices where QR = '" + pQR + "' ");
 
                 MySqlDataReader rdr = code.ExecuteReader();
 
@@ -80,28 +78,33 @@ namespace QRbackend
         public bool AddDevice(String pQR, String pSerialCode, float pPrice, String pDescription, String pBrandName, String pEstateName, String pCategory)   //
         {
             try
-            {
-                this.connection.Open();
+            {               
                 MySqlCommand code = new MySqlCommand();
-                code.Connection = this.connection;
-                List<int> idDevice = VerifyDevice(pQR);
                 
-                if (idDevice.Count == 0)
+                List<int> device = VerifyDevice(pQR);
+                int idCategory = VerifyCategory(pCategory)[0];
+
+                if (device.Count == 0)
                 {
                     int idBrand = VerifyBrand(pBrandName)[0];
                     int idEstate = VerifyEstate(pEstateName)[0];
-                    int idCategory = VerifyCategory(pCategory)[0];
+                    
+                    this.connection.Open();
+                    code.Connection = this.connection;
 
-                    code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('" + pQR + "' , '" + pSerialCode + "', " + pPrice + ", '" + pDescription + "', " + idBrand + ", 1, " + idEstate);
-
-                                
+                    code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstado) Values ('" + pQR + "' , '" + pSerialCode + "', " + pPrice + ", '" + pDescription + "', " + idBrand + ", 1, " + idEstate +")");
+                   
                     MySqlDataReader rdr = code.ExecuteReader();
-                    return true;
-
+                    this.connection.Close();
+                    
                 }
-                
+
+                int idDevice = VerifyDevice(pQR)[0];
+                DevicexCategory(idDevice, idCategory);
+
+                return true;
             }
-            finally
+            catch(Exception e)
             {
                 this.connection.Close();
 
@@ -118,8 +121,7 @@ namespace QRbackend
                 MySqlCommand code = new MySqlCommand();
                 code.Connection = this.connection;
 
-                code.CommandText = ("Insert Into DevicexCategory (idDevice, idCategory) Values ("+pIdDevice+","+pIdCategory+")");
-                code.ExecuteNonQuery();
+                code.CommandText = ("Insert Into devicesxcategory (idDevices, idCategory) Values ("+pIdDevice+","+pIdCategory+")");
 
                 MySqlDataReader rdr = code.ExecuteReader();
                 return true;
