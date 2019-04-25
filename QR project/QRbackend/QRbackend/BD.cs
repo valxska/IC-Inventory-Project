@@ -13,32 +13,43 @@ namespace QRbackend
     {
         private MySqlConnection connection = new MySqlConnection("server = localhost; user id = root; password = Poder*16; persistsecurityinfo = True; database = inventario_ic");
 
-        public bool LogIn(String pWWID, String pPassword)
+        public int LogIn(String pWWID, String pPassword)
         {
-            this.connection.Open();
 
+            List<int> rowList = new List<int>();
+            try
+            {
 
-            MySqlCommand code = new MySqlCommand();
-            code.Connection = this.connection;
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
 
-            code.CommandText = ("Select * from user Where WWID = '" + pWWID + "' and password = '" + pPassword + "' ");
+                code.Connection = this.connection;
 
-            MySqlDataReader rdr = code.ExecuteReader();
+                code.CommandText = ("Select idPerson from user Where WWID = '" + pWWID + "' and password = '" + pPassword + "'");
 
+                MySqlDataReader rdr = code.ExecuteReader();
 
-            if (rdr.Read())
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetInt32(0));
+                }
+
+            }
+            finally
             {
                 this.connection.Close();
-                return true;
+            }
+
+            if (rowList.Count > 0)
+            {
+                 return rowList[0];
+
             }
             else
             {
-                this.connection.Close();
-                return false;
+                return -1;
             }
-
-
-                        
+                                              
         }
 
         
