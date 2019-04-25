@@ -42,9 +42,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(221, 160);
+            this.button1.Location = new System.Drawing.Point(251, 214);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(304, 83);
+            this.button1.Size = new System.Drawing.Size(255, 64);
             this.button1.TabIndex = 0;
             this.button1.Text = "Prestar/Regalar";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,9 +52,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(221, 274);
+            this.button2.Location = new System.Drawing.Point(251, 314);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(304, 83);
+            this.button2.Size = new System.Drawing.Size(255, 64);
             this.button2.TabIndex = 1;
             this.button2.Text = "Devolver";
             this.button2.UseVisualStyleBackColor = true;
@@ -62,10 +62,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Intel Clear", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(285, 65);
+            this.label1.Font = new System.Drawing.Font("Intel Clear", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(308, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 60);
+            this.label1.Size = new System.Drawing.Size(136, 46);
             this.label1.TabIndex = 2;
             this.label1.Text = "Interno";
             // 
