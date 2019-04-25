@@ -323,26 +323,6 @@ namespace QRbackend
             return false;
         }
 
-        public bool AddEventType(string pEventType)
-        {
-            try
-            {
-                MySqlCommand code = new MySqlCommand();
-                this.connection.Open();
-                code.Connection = this.connection;
-
-                code.CommandText = ("Insert Into eventtype (name) Values ('" + pEventType +"') ");
-                code.ExecuteReader();
-                this.connection.Close();
-                return true;
-            }
-            finally
-            {
-                this.connection.Close();
-            }
-            return false;
-        }
-
 
         //AÑADIR email PERTENECIENTE A una PERSONA
         //Recibe el email
