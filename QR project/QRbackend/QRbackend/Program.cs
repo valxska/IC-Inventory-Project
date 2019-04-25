@@ -18,7 +18,7 @@ namespace QRbackend
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             BD PruebaDeBD = new BD();
-            List<int> x = PruebaDeBD.VerifyEstate("Pesimo");
+            List<int> x = PruebaDeBD.VerifyEmail("valeskamorac@gmail.com");
             MessageBox.Show(x[0].ToString());
 
             /*if (x) {

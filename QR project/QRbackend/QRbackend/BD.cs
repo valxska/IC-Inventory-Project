@@ -66,14 +66,7 @@ namespace QRbackend
                     rowList.Add(rdr.GetInt32(0));
 
                 }
-                if (rowList.Count == 0)
-                {
-                    this.connection.Close();
-                    //AddDevice(pQR);       Se ocupa terminar esta linea
-                    return VerifyDevice(pQR);
-
-                }
-
+                
             }
             finally
             {
@@ -91,25 +84,58 @@ namespace QRbackend
                 this.connection.Open();
                 MySqlCommand code = new MySqlCommand();
                 code.Connection = this.connection;
+                List<int> idDevice = VerifyDevice(pQR);
+                
+                if (idDevice.Count == 0)
+                {
+                    int idBrand = VerifyBrand(pBrandName)[0];
+                    int idEstate = VerifyEstate(pEstateName)[0];
+                    int idCategory = VerifyCategory(pCategory)[0];
 
-                int idBrand = VerifyBrand(pBrandName)[0];
-                int idEstate = VerifyEstate(pEstateName)[0];
+                    code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('" + pQR + "' , '" + pSerialCode + "', " + pPrice + ", '" + pDescription + "', " + idBrand + ", 1, " + idEstate);
 
+                                
+                    MySqlDataReader rdr = code.ExecuteReader();
+                    return true;
 
-                code.CommandText = ("Insert Into devices  (QR, serialCode, price, description, idBrand, available, idEstate) Values ('" + pQR + "' , '" + pSerialCode + "', " + pPrice + ", '" + pDescription + "', " + idBrand + ", 1, " + idEstate);
-                code.ExecuteNonQuery();
-
-
-                MySqlDataReader rdr = code.ExecuteReader();
-
-
+                }
+                
             }
             finally
             {
                 this.connection.Close();
 
             }
+            return false;
+
         }
+
+        public bool DevicexCategory (int pIdDevice, int pIdCategory)
+        {
+            try
+            {
+                this.connection.Open();
+                MySqlCommand code = new MySqlCommand();
+                code.Connection = this.connection;
+
+                code.CommandText = ("Insert Into DevicexCategory (idDevice, idCategory) Values ("+pIdDevice+","+pIdCategory+")");
+                code.ExecuteNonQuery();
+
+                MySqlDataReader rdr = code.ExecuteReader();
+                return true;
+
+            }
+
+            finally
+            {
+                this.connection.Close();
+
+            }
+            return false;
+
+
+        }
+
 
 
         public List<int> VerifyBrand(String pBrandName)
@@ -274,8 +300,7 @@ namespace QRbackend
 
         }
 
-        //Se utilizo el mismo metodo para añadir state en esta funcion.
-        //Y se elimino el metodo anterior
+      
         public bool AddCategory(string pCategoryName)
         {
             try
@@ -324,7 +349,7 @@ namespace QRbackend
                 if (rowList.Count == 0)
                 {
                     this.connection.Close();
-                    Addemail(pEmail);
+                    AddEmail(pEmail);
                     return VerifyEmail(pEmail);
 
                 }
@@ -339,7 +364,7 @@ namespace QRbackend
 
         }
 
-        //Se utilizo el 
+     
         public bool AddEmail(string pEmail)
         {
             try
