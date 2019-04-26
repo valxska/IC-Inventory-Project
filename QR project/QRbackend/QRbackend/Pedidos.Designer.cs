@@ -38,13 +38,13 @@
             this.text_ID = new System.Windows.Forms.TextBox();
             this.text_Name = new System.Windows.Forms.TextBox();
             this.text_LastName = new System.Windows.Forms.TextBox();
-            this.text_Type = new System.Windows.Forms.TextBox();
             this.text_Phone = new System.Windows.Forms.TextBox();
             this.text_Email = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_Back = new System.Windows.Forms.Button();
             this.btn_Send = new System.Windows.Forms.Button();
             this.text_Description = new System.Windows.Forms.RichTextBox();
+            this.comboType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -142,13 +142,6 @@
             this.text_LastName.Size = new System.Drawing.Size(214, 26);
             this.text_LastName.TabIndex = 9;
             // 
-            // text_Type
-            // 
-            this.text_Type.Location = new System.Drawing.Point(289, 212);
-            this.text_Type.Name = "text_Type";
-            this.text_Type.Size = new System.Drawing.Size(214, 26);
-            this.text_Type.TabIndex = 10;
-            // 
             // text_Phone
             // 
             this.text_Phone.Location = new System.Drawing.Point(289, 248);
@@ -201,18 +194,26 @@
             this.text_Description.TabIndex = 18;
             this.text_Description.Text = "";
             // 
+            // comboType
+            // 
+            this.comboType.FormattingEnabled = true;
+            this.comboType.Location = new System.Drawing.Point(289, 213);
+            this.comboType.Name = "comboType";
+            this.comboType.Size = new System.Drawing.Size(214, 28);
+            this.comboType.TabIndex = 19;
+            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 491);
+            this.Controls.Add(this.comboType);
             this.Controls.Add(this.text_Description);
             this.Controls.Add(this.btn_Send);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.text_Email);
             this.Controls.Add(this.text_Phone);
-            this.Controls.Add(this.text_Type);
             this.Controls.Add(this.text_LastName);
             this.Controls.Add(this.text_Name);
             this.Controls.Add(this.text_ID);
@@ -242,12 +243,12 @@
         private System.Windows.Forms.TextBox text_ID;
         private System.Windows.Forms.TextBox text_Name;
         private System.Windows.Forms.TextBox text_LastName;
-        private System.Windows.Forms.TextBox text_Type;
         private System.Windows.Forms.TextBox text_Phone;
         private System.Windows.Forms.TextBox text_Email;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.Button btn_Send;
         private System.Windows.Forms.RichTextBox text_Description;
+        private System.Windows.Forms.ComboBox comboType;
     }
 }

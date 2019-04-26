@@ -13,10 +13,20 @@ namespace QRbackend
     public partial class Pedidos : Form
     {
         private bool mode;
-        public Pedidos(bool mode)
+        private BD bd;
+        private string device;
+        private int idBorrowPerson;
+        public Pedidos(bool mode, string pdevice, int idBorrowPerson)
         {
             InitializeComponent();
             this.mode = mode;
+            this.idBorrowPerson = idBorrowPerson;
+            device = pdevice;
+            bd = new BD();
+
+            comboType.Items.Add("Interno");   // 0
+            comboType.Items.Add("Externo");    // 1
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -47,6 +57,30 @@ namespace QRbackend
         private void button1_Click(object sender, EventArgs e)
         {
 
+            string id = String.Empty;
+            string name = String.Empty;
+            string lastname = String.Empty;
+            string phone = String.Empty;
+            string email = String.Empty;
+            string description = String.Empty;
+
+            if(text_ID.Text != id && text_Name.Text != name && text_LastName.Text != lastname && text_Phone.Text != phone && text_Email.Text != email && text_Description.Text != description)
+            {
+                int eventtype = mode ? 2 : 1;
+                id = text_ID.Text;
+                name = text_Name.Text;
+                lastname = text_LastName.Text;
+                phone = text_Phone.Text;
+                email = text_Email.Text;
+                description = text_Description.Text;
+
+                int idPerson = bd.VerifyPerson(id, name, lastname, comboType.SelectedIndex +1 , 0, email, phone);
+                bd.AddEvent(bd.VerifyDevice(device), idPerson, idBorrowPerson, eventtype, description);
+            }
+
+            
+
+            
         }
     }
 }

@@ -12,22 +12,24 @@ namespace QRbackend
 {
     public partial class Menu : Form
     {
-        public Menu()
+        private int idBorrowPerson;
+        public Menu(int idBorrowPerson)
         {
             InitializeComponent();
+            this.idBorrowPerson = idBorrowPerson;
         }
 
         private void btn_prestamo_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Lector lector = new Lector(false);
+            Lector lector = new Lector(false, idBorrowPerson);
             lector.Show();
         }
 
         private void btn_devolucion_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Lector lector = new Lector(true);
+            Lector lector = new Lector(true, 0);
             lector.Show();
         }
 

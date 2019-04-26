@@ -22,13 +22,16 @@ namespace QRbackend
         private Bitmap last_map;
         private String data = String.Empty;
         private bool mode;
+        private int idBorrowPerson;
         Thread analyzerQr;
 
-        public Lector(bool mode)
+        public Lector(bool mode, int idBorrowPerson)
         {
             InitializeComponent();
             this.mode = mode;
+            this.idBorrowPerson = idBorrowPerson;
             timer1.Start();
+
         }
 
         
@@ -81,7 +84,7 @@ namespace QRbackend
             if (txtQR.Text != String.Empty) {
                 timer1.Stop();
                 this.Hide();
-                Pedidos pedido = new Pedidos(mode);
+                Pedidos pedido = new Pedidos(mode, txtQR.Text, idBorrowPerson);
                 pedido.Show();
             }
         }

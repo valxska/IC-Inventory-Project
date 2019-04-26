@@ -28,9 +28,12 @@ namespace QRbackend
                 wwid = textWWID.Text;
                 pass = textPass.Text;
                 BD bd = new BD();
-                if(bd.LogIn( wwid, pass)!= -1){
+
+                int idBorrowPerson = bd.LogIn(wwid, pass);
+
+                if (idBorrowPerson != -1){
                     this.Hide();
-                    Menu fm = new Menu();
+                    Menu fm = new Menu(idBorrowPerson);
                     fm.Show();
                 }
                 else
