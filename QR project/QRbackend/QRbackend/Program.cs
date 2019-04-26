@@ -18,8 +18,8 @@ namespace QRbackend
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             BD PruebaDeBD = new BD();
-            int x = PruebaDeBD.LogIn ("116440524", "1234");
-            MessageBox.Show(x.ToString());
+            List<int> x = PruebaDeBD.VerifyPhone ("71809304", 1);
+            MessageBox.Show(x[0].ToString());
 
             //bool x = PruebaDeBD.DevicexCategory(2, 1);
             //bool x = PruebaDeBD.AddDevice("ABCDE", "HB24I1", 12000, "Esta muy lindo", "Samsung", "Malo", "Electronica");

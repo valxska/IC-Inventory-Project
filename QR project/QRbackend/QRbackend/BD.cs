@@ -354,8 +354,72 @@ namespace QRbackend
             return false;
         }
 
-       
-        public List<int> VerifyEmail(String pEmail)
+
+        public List<string> VerifyPerson(string pID, String pName, String pLastName, int pType, int pAuthorized, String pEmail, String pPhone)
+        {
+
+            List<string> rowList = new List<string>();
+            try
+            {
+
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select idPerson From person where ID = '" + pID + "' ");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetString(0));
+                }
+
+                if (rowList.Count == 0)
+                {
+                    this.connection.Close();
+                    AddPerson(pID, pName, pLastName, pType, pAuthorized, pEmail, pPhone);
+                    //AddPhone ()
+                    //return VerifyPerson(pID, pName, pLastName, pType, pAuthorized, pEmail, pPhone);
+
+                }
+
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return rowList;
+            
+        }
+
+
+        public bool AddPerson(String pID, String pName, String pLastName, int pType, int pAuthorized, String pEmail, String pPhone)
+        {
+            try
+            {
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+                code.Connection = this.connection;
+
+                code.CommandText = ("Insert Into person (ID, personName, personLastName, idType, available, authorized) Values ('" + pID + "', '"+ pName +"', '"+ pLastName +"', "+pType+", 1, "+ pAuthorized +") ");     
+                code.ExecuteReader();
+                this.connection.Close();
+                return true;
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return false;
+
+
+        }
+
+
+
+        public List<int> VerifyEmail(String pEmail, int pIdPerson)
         {
             List<int> rowList = new List<int>();
             try
@@ -378,8 +442,8 @@ namespace QRbackend
                 if (rowList.Count == 0)
                 {
                     this.connection.Close();
-                    AddEmail(pEmail);
-                    return VerifyEmail(pEmail);
+                    AddEmail(pEmail, pIdPerson);
+                    return VerifyEmail(pEmail, pIdPerson);
 
                 }
 
@@ -394,7 +458,7 @@ namespace QRbackend
         }
 
      
-        public bool AddEmail(string pEmail)
+        public bool AddEmail(string pEmail, int pIdPerson)
         {
             try
             {
@@ -402,7 +466,7 @@ namespace QRbackend
                 this.connection.Open();
                 code.Connection = this.connection;
 
-                code.CommandText = ("Insert Into email (email) Values ('" + pEmail + "') ");
+                code.CommandText = ("Insert Into email (email, idPerson) Values ('" + pEmail + "', "+pIdPerson+") ");
                 code.ExecuteReader();
                 this.connection.Close();
                 return true;
@@ -413,9 +477,46 @@ namespace QRbackend
             }
             return false;
         }
-    
 
-        public bool AddPhone(String pPhone)
+
+        public List<int> VerifyPhone(String pPhone, int pIdPerson)
+        {
+            List<int> rowList = new List<int>();
+            try
+            {
+
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select idPhone From phone where phone = '" + pPhone + "' ");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetInt32(0));
+
+                }
+                if (rowList.Count == 0)
+                {
+                    this.connection.Close();
+                    AddPhone(pPhone, pIdPerson);
+                    return VerifyPhone(pPhone, pIdPerson);
+
+                }
+
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return rowList;
+
+        }
+
+        public bool AddPhone(String pPhone, int pIdPerson)
         {
             try
             {
@@ -423,7 +524,7 @@ namespace QRbackend
                 this.connection.Open();
                 code.Connection = this.connection;
 
-                code.CommandText = ("Insert Into phone(phone) Values('" + pPhone + "') ");
+                code.CommandText = ("Insert Into phone(phone, idPerson) Values('" + pPhone + "', "+pIdPerson+") ");
                 code.ExecuteReader();
                 this.connection.Close();
                 return true;
@@ -439,37 +540,7 @@ namespace QRbackend
             }
         
         
-        public bool AddPerson(String pId, String pPersonName, String pPersonLastname, String pType, int pAuthorized, int pidUser)
-            {
-                MySqlCommand code = new MySqlCommand();
-                code.Connection = this.connection;
-
-                
-                string TipoPersona = ("Select idPersonalType From PersonalType where nombre = '" + pType + "' ");
-
-            //AddUser(pWwid, pPassword); //Añade el usuario a la bd. Recibe la contraseña y el wwid
-            //string Usuario = ("Select idUser From user where wwid = '" + pWwid + "' ");
-
-
-                code.CommandText = ("Select idPerson From person where id = '" + pId + "' ");
-                this.connection.Close();
-                this.connection.Open();
-                MySqlDataReader rdr = code.ExecuteReader();
-
-
-                if (rdr.Read())
-                {
-                    this.connection.Close();
-                    return true;
-                }
-                else
-                {
-                    code.CommandText = ("Insert Into person  (ID, personname, personlastname, idType, availabled, authorized, idUser) Values ('" + pId + "' , '" + pPersonName + "' , '" +  pPersonLastname + "', '" + TipoPersona + "' , '1' , '" + pAuthorized +"', '1' ");
-                    this.connection.Close();
-                    return false;
-                }
-            }
-
+        
         
         public bool AddUser(String pWwid, String pPassword)
             {
