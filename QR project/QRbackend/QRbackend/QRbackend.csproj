@@ -78,11 +78,11 @@
     <Compile Include="DatosDevolucion.Designer.cs">
       <DependentUpon>DatosDevolucion.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatosPrestamo.cs">
+    <Compile Include="Pedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatosPrestamo.Designer.cs">
-      <DependentUpon>DatosPrestamo.cs</DependentUpon>
+    <Compile Include="Pedidos.Designer.cs">
+      <DependentUpon>Pedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Lector.cs">
       <SubType>Form</SubType>
@@ -111,6 +111,9 @@
     <Compile Include="ViewData.Designer.cs">
       <DependentUpon>ViewData.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Pedidos.resx">
+      <DependentUpon>Pedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Lector.resx">
       <DependentUpon>Lector.cs</DependentUpon>
     </EmbeddedResource>

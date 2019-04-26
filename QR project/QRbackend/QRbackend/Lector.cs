@@ -22,7 +22,6 @@ namespace QRbackend
         private Bitmap last_map;
         private String data = String.Empty;
         private bool mode;
-        private bool exist_qr;
         Thread analyzerQr;
 
         public Lector(bool mode)
@@ -65,7 +64,6 @@ namespace QRbackend
                     texto = br.Decode((Bitmap)picture_cam.Image.Clone()).ToString();
 
                     data = texto;
-                    exist_qr = true;
                     MessageBox.Show(texto, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     analyze_qr();
@@ -81,19 +79,10 @@ namespace QRbackend
         {
             txtQR.Text = data;
             if (txtQR.Text != String.Empty) {
-                if (mode && exist_qr)
-                {
-                    timer1.Stop();
-                    this.Hide();
-                    DatosDevolucion devo = new DatosDevolucion();
-                    devo.Show();
-                }
-                else {
-                    timer1.Stop();
-                    this.Hide();
-                    DatosPrestamo prestamo = new DatosPrestamo();
-                    prestamo.Show();
-                }
+                timer1.Stop();
+                this.Hide();
+                Pedidos pedido = new Pedidos(mode);
+                pedido.Show();
             }
         }
 
