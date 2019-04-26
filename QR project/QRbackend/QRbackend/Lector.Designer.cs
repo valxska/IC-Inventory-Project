@@ -41,27 +41,27 @@
             // txtQR
             // 
             this.txtQR.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.txtQR.Location = new System.Drawing.Point(34, 574);
+            this.txtQR.Location = new System.Drawing.Point(30, 459);
             this.txtQR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQR.Name = "txtQR";
-            this.txtQR.Size = new System.Drawing.Size(750, 26);
+            this.txtQR.Size = new System.Drawing.Size(667, 22);
             this.txtQR.TabIndex = 11;
             // 
             // devices_box
             // 
             this.devices_box.FormattingEnabled = true;
-            this.devices_box.Location = new System.Drawing.Point(201, 615);
+            this.devices_box.Location = new System.Drawing.Point(179, 492);
             this.devices_box.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.devices_box.Name = "devices_box";
-            this.devices_box.Size = new System.Drawing.Size(393, 28);
+            this.devices_box.Size = new System.Drawing.Size(350, 24);
             this.devices_box.TabIndex = 10;
             // 
             // btn_init
             // 
-            this.btn_init.Location = new System.Drawing.Point(618, 615);
+            this.btn_init.Location = new System.Drawing.Point(549, 492);
             this.btn_init.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_init.Name = "btn_init";
-            this.btn_init.Size = new System.Drawing.Size(146, 38);
+            this.btn_init.Size = new System.Drawing.Size(130, 30);
             this.btn_init.TabIndex = 9;
             this.btn_init.Text = "Start";
             this.btn_init.UseVisualStyleBackColor = true;
@@ -69,10 +69,10 @@
             // 
             // btn_regresar
             // 
-            this.btn_regresar.Location = new System.Drawing.Point(34, 615);
+            this.btn_regresar.Location = new System.Drawing.Point(30, 492);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(146, 38);
+            this.btn_regresar.Size = new System.Drawing.Size(130, 30);
             this.btn_regresar.TabIndex = 8;
             this.btn_regresar.Text = "Back";
             this.btn_regresar.UseVisualStyleBackColor = true;
@@ -80,10 +80,10 @@
             // 
             // picture_cam
             // 
-            this.picture_cam.Location = new System.Drawing.Point(34, 14);
-            this.picture_cam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.picture_cam.Location = new System.Drawing.Point(30, 11);
+            this.picture_cam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picture_cam.Name = "picture_cam";
-            this.picture_cam.Size = new System.Drawing.Size(750, 551);
+            this.picture_cam.Size = new System.Drawing.Size(667, 441);
             this.picture_cam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picture_cam.TabIndex = 7;
             this.picture_cam.TabStop = false;
@@ -95,14 +95,16 @@
             // 
             // Lector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 664);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(716, 531);
             this.Controls.Add(this.txtQR);
             this.Controls.Add(this.devices_box);
             this.Controls.Add(this.btn_init);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.picture_cam);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Lector";
             this.Text = "Lector";
             this.Load += new System.EventHandler(this.Lector_Load);

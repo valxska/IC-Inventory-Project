@@ -16,5 +16,29 @@ namespace QRbackend
         {
             InitializeComponent();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void qrButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddDeviceForm fm = new AddDeviceForm();
+            fm.Show();
+        }
+
+        private void backbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu fm = new Menu();
+            fm.Show();
+        }
     }
 }
