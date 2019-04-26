@@ -355,10 +355,10 @@ namespace QRbackend
         }
 
 
-        public List<string> VerifyPerson(string pID, String pName, String pLastName, int pType, int pAuthorized, String pEmail, String pPhone)
+        public List<int> VerifyPerson(string pID, String pName, String pLastName, int pType, int pAuthorized, String pEmail, String pPhone)
         {
 
-            List<string> rowList = new List<string>();
+            List<int> rowList = new List<int>();
             try
             {
 
@@ -373,15 +373,14 @@ namespace QRbackend
 
                 while (rdr.Read())
                 {
-                    rowList.Add(rdr.GetString(0));
+                    rowList.Add(rdr.GetInt32(0));
                 }
 
                 if (rowList.Count == 0)
                 {
                     this.connection.Close();
                     AddPerson(pID, pName, pLastName, pType, pAuthorized, pEmail, pPhone);
-                    //AddPhone ()
-                    //return VerifyPerson(pID, pName, pLastName, pType, pAuthorized, pEmail, pPhone);
+                    return VerifyPerson(pID, pName, pLastName, pType, pAuthorized, pEmail, pPhone);
 
                 }
 
@@ -390,6 +389,9 @@ namespace QRbackend
             {
                 this.connection.Close();
             }
+            AddPhone(pPhone, rowList[0]);
+            AddEmail(pEmail, rowList[0]);
+
             return rowList;
             
         }
