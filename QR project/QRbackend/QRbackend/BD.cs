@@ -277,11 +277,7 @@ namespace QRbackend
 
         }
 
-        //AÑADIR Categorias para ser relacionadas con un device
-        //Recibe el nombre de la categoria
-        //Realizado por: Nakisha Dixon el 4/23/19
-        //Modificado el 25/04/19
-        //falta probar
+        
         public int VerifyCategory(String pCategoryName)
         {
             List<int> rowList = new List<int>();

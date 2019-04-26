@@ -14,15 +14,23 @@ namespace QRbackend
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            BD PruebaDeBD = new BD();
+            
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LogIn());
+
+
+
+
+
+
+
+            //BD PruebaDeBD = new BD();
             //int x = PruebaDeBD.VerifyEmail ("vale@intel.com", 1 );
 
 
-            bool x = PruebaDeBD.AddEvent(1, 1, 2, 1, "Hola");
-            MessageBox.Show(x.ToString());
+            //bool x = PruebaDeBD.AddEvent(1, 2, 2, 1, "Rawayana");
+            //MessageBox.Show(x.ToString());
             //bool x = PruebaDeBD.AddDevice("ABCDh", "HB24I1", 12000, "Esta muy lindo", "Samsung", "Malo", "Electronica");
 
             //MessageBox.Show(x[0].ToString());
