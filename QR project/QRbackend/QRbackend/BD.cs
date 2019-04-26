@@ -580,10 +580,77 @@ namespace QRbackend
 
         }
 
-        /*public int (){
+        public bool AddEvent (int pIdDevice, int pIdPerson, int pBorrowIdPerson, int pIdType, String pDescription)
+        {
+            this.connection.Open();
             
+            MySqlCommand code = new MySqlCommand();
+            code.Connection = this.connection;
+            DateTime momento = DateTime.Now;
+           
+
+            code.CommandText = ("Insert Into event (creationDate, description,idEventType) Values ('" + momento.ToString("yyyy-MM-dd H:mm:ss") + "', '"+pDescription+"','" + pIdType + "')  ");
+            code.ExecuteReader();
+            this.connection.Close();
+
+            int idEvent = GetEvent(momento);
+            AddHistory(idEvent, pIdDevice, pIdPerson, pBorrowIdPerson);
+            return true;
+        }
+
+
+        public int GetEvent(DateTime pCreationDate) {
+            List<int> rowList = new List<int>();
+            try
+            {
+
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select idEvent From event where creationDate = '" + pCreationDate.ToString("yyyy-MM-dd H:mm:ss") +"' ");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetInt32(0));
+
+                }
+                
+                    this.connection.Close();
+                    return rowList[0];
+                
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return -1;
+                        
+        }
+
+        public bool AddHistory(int pIdEvent, int pIdDevice, int pIdPerson, int pBorrowIdPerson)
+        {
+            try { 
+            this.connection.Open();
             
-            }*/
+            MySqlCommand code = new MySqlCommand();
+            code.Connection = this.connection;
+
+            code.CommandText = ("Insert Into history (idEvent,idDevices, idPerson, BorrowIdPerson) Values (" + pIdEvent + "," + pIdDevice + ", "+ pIdPerson+", "+pBorrowIdPerson+") ");
+            code.ExecuteReader();
+            this.connection.Close();
+            return true;
+        }
+            finally
+            {
+                this.connection.Close();
+            }
+            return false;
+                                    
+        }
 
     }
 }
