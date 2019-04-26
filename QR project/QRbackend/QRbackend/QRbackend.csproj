@@ -87,6 +87,12 @@
     <Compile Include="DatosDevolucion.Designer.cs">
       <DependentUpon>DatosDevolucion.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneratorForm.Designer.cs">
+      <DependentUpon>GeneratorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </Compile>
     <EmbeddedResource Include="AddDeviceForm.resx">
       <DependentUpon>AddDeviceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneratorForm.resx">
+      <DependentUpon>GeneratorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos.resx">
       <DependentUpon>Pedidos.cs</DependentUpon>
