@@ -46,6 +46,7 @@
             this.btn_exit.TabIndex = 9;
             this.btn_exit.Text = "Back";
             this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // btn_admin
             // 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 //Funciones respectivas a la BD
 
@@ -647,6 +648,54 @@ namespace QRbackend
             }
             return false;
                                     
+        }
+
+        public DataTable GetInfoPerson()
+        {
+            try
+            {
+                this.connection.Open();
+                               
+                string command = "select * from person";
+                MySqlDataAdapter adp = new MySqlDataAdapter(command, this.connection );
+                DataTable info = new DataTable();
+                adp.Fill(info);
+                this.connection.Close();
+                return info;
+
+            }
+
+            finally
+            {
+                this.connection.Close();
+
+            }
+            return null;
+
+        }
+
+        public DataTable GetInfoInventory()
+        {
+            try
+            {
+                this.connection.Open();
+
+                string command = "select * from devices";
+                MySqlDataAdapter adp = new MySqlDataAdapter(command, this.connection);
+                DataTable info = new DataTable();
+                adp.Fill(info);
+                this.connection.Close();
+                return info;
+
+            }
+
+            finally
+            {
+                this.connection.Close();
+
+            }
+            return null;
+
         }
 
     }

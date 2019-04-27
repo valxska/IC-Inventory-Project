@@ -37,7 +37,9 @@ namespace QRbackend
         
         private void btn_regresar_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Menu fm = new Menu(idBorrowPerson);
+            fm.Show();
         }
 
         private void btn_init_Click(object sender, EventArgs e)
@@ -84,6 +86,7 @@ namespace QRbackend
             if (txtQR.Text != String.Empty) {
                 timer1.Stop();
                 this.Hide();
+                finalFrame.Stop();
                 Pedidos pedido = new Pedidos(mode, txtQR.Text, idBorrowPerson);
                 pedido.Show();
             }

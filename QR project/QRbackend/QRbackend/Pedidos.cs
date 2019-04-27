@@ -90,7 +90,9 @@ namespace QRbackend
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Menu fm = new Menu(idBorrowPerson);
+            fm.Show();
         }
     }
 }
