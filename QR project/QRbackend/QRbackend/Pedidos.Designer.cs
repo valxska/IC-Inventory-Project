@@ -216,12 +216,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
+
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(682, 491);
-=======
-            this.ClientSize = new System.Drawing.Size(606, 393);
->>>>>>> f4042adbb50826fb76cac7df83dbefd473c25348
+
+           
+
             this.Controls.Add(this.comboType);
             this.Controls.Add(this.text_Description);
             this.Controls.Add(this.btn_Send);

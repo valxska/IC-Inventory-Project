@@ -39,7 +39,7 @@
             // 
             this.btn_exit.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btn_exit.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exit.Location = new System.Drawing.Point(335, 361);
+            this.btn_exit.Location = new System.Drawing.Point(307, 325);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(94, 44);
@@ -51,7 +51,7 @@
             // 
             this.btn_admin.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_admin.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_admin.Location = new System.Drawing.Point(421, 235);
+            this.btn_admin.Location = new System.Drawing.Point(393, 199);
             this.btn_admin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_admin.Name = "btn_admin";
             this.btn_admin.Size = new System.Drawing.Size(207, 55);
@@ -64,7 +64,7 @@
             // 
             this.btn_datos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_datos.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_datos.Location = new System.Drawing.Point(421, 166);
+            this.btn_datos.Location = new System.Drawing.Point(393, 130);
             this.btn_datos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_datos.Name = "btn_datos";
             this.btn_datos.Size = new System.Drawing.Size(207, 55);
@@ -77,7 +77,7 @@
             // 
             this.btn_devolucion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_devolucion.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_devolucion.Location = new System.Drawing.Point(143, 235);
+            this.btn_devolucion.Location = new System.Drawing.Point(115, 199);
             this.btn_devolucion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_devolucion.Name = "btn_devolucion";
             this.btn_devolucion.Size = new System.Drawing.Size(207, 55);
@@ -91,7 +91,7 @@
             this.btn_prestamo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_prestamo.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_prestamo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_prestamo.Location = new System.Drawing.Point(143, 166);
+            this.btn_prestamo.Location = new System.Drawing.Point(115, 130);
             this.btn_prestamo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_prestamo.Name = "btn_prestamo";
             this.btn_prestamo.Size = new System.Drawing.Size(207, 55);
@@ -105,7 +105,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(774, 541);
+            this.ClientSize = new System.Drawing.Size(714, 413);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_admin);
             this.Controls.Add(this.btn_datos);

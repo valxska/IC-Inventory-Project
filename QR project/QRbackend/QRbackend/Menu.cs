@@ -43,7 +43,7 @@ namespace QRbackend
         private void btn_admin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddDeviceForm fm = new AddDeviceForm(idBorrowPerson);
+            AddDeviceForm fm = new AddDeviceForm("idBorrowPerson");
             fm.Show();
         }
     }

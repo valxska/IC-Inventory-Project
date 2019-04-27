@@ -57,12 +57,12 @@
             this.button1.Size = new System.Drawing.Size(164, 45);
             this.button1.TabIndex = 1;
             this.button1.Text = "Save";
-<<<<<<< HEAD
-            this.button1.UseVisualStyleBackColor = false;
-=======
+
+         
+
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
->>>>>>> f4042adbb50826fb76cac7df83dbefd473c25348
+
             // 
             // generatebutton
             // 
@@ -122,12 +122,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(816, 636);
-=======
+
+           
             this.ClientSize = new System.Drawing.Size(725, 509);
             this.Controls.Add(this.button2);
->>>>>>> f4042adbb50826fb76cac7df83dbefd473c25348
+
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.qrtext);
             this.Controls.Add(this.label1);

@@ -16,5 +16,23 @@ namespace QRbackend
         {
             InitializeComponent();
         }
+
+        private void text_ID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Send_Click(object sender, EventArgs e)
+        {
+            string id = String.Empty;
+            string description = String.Empty;
+
+            if (text_ID.Text != id && Description.Text != description)
+            {
+
+
+
+            }
+        }
     }
 }
