@@ -30,7 +30,7 @@ namespace QRbackend
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            AddDeviceForm frm = new AddDeviceForm();
+            AddDeviceForm frm = new AddDeviceForm(0);
             frm.Show();
             this.Hide();
             this.Hide();

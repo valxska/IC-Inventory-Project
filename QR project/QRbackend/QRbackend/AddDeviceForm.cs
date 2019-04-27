@@ -12,9 +12,11 @@ namespace QRbackend
 {
     public partial class AddDeviceForm : Form
     {
-        public AddDeviceForm()
+        private int idBorrowPerson;
+        public AddDeviceForm(int idBorrowPerson)
         {
             InitializeComponent();
+            this.idBorrowPerson = idBorrowPerson;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,14 +32,14 @@ namespace QRbackend
         private void qrButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddDeviceForm fm = new AddDeviceForm();
+            AddDeviceForm fm = new AddDeviceForm(idBorrowPerson);
             fm.Show();
         }
 
         private void backbutton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu fm = new Menu();
+            Menu fm = new Menu(idBorrowPerson);
             fm.Show();
         }
     }

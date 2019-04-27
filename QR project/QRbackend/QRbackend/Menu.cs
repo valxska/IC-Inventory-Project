@@ -29,21 +29,21 @@ namespace QRbackend
         private void btn_devolucion_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Lector lector = new Lector(true, 0);
+            Lector lector = new Lector(true, idBorrowPerson);
             lector.Show();
         }
 
         private void btn_datos_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ViewData data = new ViewData();
+            ViewData data = new ViewData(idBorrowPerson);
             data.Show();
         }
 
         private void btn_admin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddDeviceForm fm = new AddDeviceForm();
+            AddDeviceForm fm = new AddDeviceForm(idBorrowPerson);
             fm.Show();
         }
     }

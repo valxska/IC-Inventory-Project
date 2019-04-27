@@ -12,9 +12,16 @@ namespace QRbackend
 {
     public partial class ViewData : Form
     {
-        public ViewData()
+        private int idBorrowPerson;
+        public ViewData(int idBorrowPerson)
         {
             InitializeComponent();
+            this.idBorrowPerson = idBorrowPerson;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
