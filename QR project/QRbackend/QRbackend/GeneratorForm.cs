@@ -11,13 +11,16 @@ using System.Windows.Forms;
 namespace QRbackend
 {
     public partial class GeneratorForm : Form
+        
     {
         private string lastQrText;
+        private string codigoQr;
         private bool existNewImage = false;
         public GeneratorForm()
         {
 
             InitializeComponent();
+            this.codigoQr = codigoQr;
         }
 
         private void generatebutton_Click(object sender, EventArgs e)
@@ -30,9 +33,38 @@ namespace QRbackend
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            AddDeviceForm frm = new AddDeviceForm(0);
+            AddDeviceForm frm = new AddDeviceForm();
             frm.Show();
             this.Hide();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (existNewImage)
+                {
+                    Bitmap qrImage = (Bitmap)picturebox.Image.Clone();
+                    qrImage.Save(@"C:\Users\nsdixonl\Documents\GitHub\IC-Inventory-Project\QR project" + lastQrText + ".png");
+                    existNewImage = false;
+                }
+                else
+                {
+                    MessageBox.Show("No se ha generado ningun QR nuevo", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ha ocurrido un error al guardar el QR", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String codigoQr = qrtext.Text;
+            AddDeviceForm frm = new AddDeviceForm(codigoQr);
+            frm.Show();
             this.Hide();
 
         }

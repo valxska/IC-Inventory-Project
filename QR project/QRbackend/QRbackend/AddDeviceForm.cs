@@ -12,11 +12,18 @@ namespace QRbackend
 {
     public partial class AddDeviceForm : Form
     {
+        private string codigoQr;
         private int idBorrowPerson;
-        public AddDeviceForm(int idBorrowPerson)
+        private BD bd;
+
+        public AddDeviceForm(String codigoQr)
         {
             InitializeComponent();
             this.idBorrowPerson = idBorrowPerson;
+            this.codigoQr = codigoQr;
+            bd = new BD();
+
+            //SE DEBEN AÑADIR LAS OPCIONES DE AMBOS COMBOBOX (BRAND Y CATEGORY)
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -32,7 +39,7 @@ namespace QRbackend
         private void qrButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddDeviceForm fm = new AddDeviceForm(idBorrowPerson);
+            AddDeviceForm fm = new AddDeviceForm(codigoQr);
             fm.Show();
         }
 
@@ -41,6 +48,28 @@ namespace QRbackend
             this.Hide();
             Menu fm = new Menu(idBorrowPerson);
             fm.Show();
+        }
+
+        private void insertButton_Click(object sender, EventArgs e)
+        {
+            qrText.Text = codigoQr;
+            String name = namebox.Text;
+            String category = categorybox.SelectedItem.ToString();
+            String description = descriptionbox.Text;
+            String serialcode = serialbox.Text;
+            float price = float.Parse(pricebox.Text);
+            String brand = brandbox.SelectedItem.ToString();
+            String estate = estatebox.SelectedItem.ToString();
+            int idDevice = bd.VerifyDevice(codigoQr);
+            int idCategory = bd.VerifyCategory(category);
+            int idBrand = bd.VerifyBrand(brand);
+            bd.AddDevice(codigoQr,serialcode,price,description,brand,estate,category);
+
+        }
+
+        private void qrText_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
