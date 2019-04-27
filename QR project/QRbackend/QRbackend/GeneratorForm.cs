@@ -36,5 +36,10 @@ namespace QRbackend
             this.Hide();
 
         }
+
+        private void GeneratorForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
