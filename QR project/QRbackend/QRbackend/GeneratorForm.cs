@@ -16,11 +16,12 @@ namespace QRbackend
         private string lastQrText;
         private string codigoQr;
         private bool existNewImage = false;
-        public GeneratorForm()
+        int idBorrowPerson;
+        public GeneratorForm(int idBorrowPerson)
         {
 
             InitializeComponent();
-            this.codigoQr = codigoQr;
+            this.idBorrowPerson = idBorrowPerson;
         }
 
         private void generatebutton_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace QRbackend
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            AddDeviceForm frm = new AddDeviceForm("");
+            AddDeviceForm frm = new AddDeviceForm(codigoQr,idBorrowPerson);
             frm.Show();
             this.Hide();
 
@@ -63,7 +64,7 @@ namespace QRbackend
         private void button2_Click(object sender, EventArgs e)
         {
             String codigoQr = qrtext.Text;
-            AddDeviceForm frm = new AddDeviceForm(codigoQr);
+            AddDeviceForm frm = new AddDeviceForm(codigoQr, idBorrowPerson);
             frm.Show();
             this.Hide();
 

@@ -12,7 +12,7 @@ namespace QRbackend
 {
     class BD
     {
-        private MySqlConnection connection = new MySqlConnection("server = localhost; user id = root; password = root; persistsecurityinfo = True; database = icproyect");
+        private MySqlConnection connection = new MySqlConnection("server = localhost; user id = root; password = root; persistsecurityinfo = True; database = inventario_ic");
 
         public int LogIn(String pWWID, String pPassword)
         {
