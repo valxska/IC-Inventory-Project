@@ -74,6 +74,7 @@ namespace QRbackend
             int idDevice = bd.VerifyDevice(codigoQr);
             int idCategory = bd.VerifyCategory(category);
             int idBrand = bd.VerifyBrand(brand);
+            //if(name==String.Empty || category )
             bd.AddDevice(codigoQr,serialcode,price,description,brand,estate,category);
 
         }

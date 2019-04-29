@@ -54,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 213);
+            this.label1.Location = new System.Drawing.Point(34, 208);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 27);
             this.label1.TabIndex = 0;
@@ -84,7 +84,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(443, 129);
+            this.label4.Location = new System.Drawing.Point(443, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 27);
             this.label4.TabIndex = 3;
@@ -94,7 +94,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(448, 208);
+            this.label5.Location = new System.Drawing.Point(447, 208);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 27);
             this.label5.TabIndex = 4;
@@ -104,7 +104,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(447, 290);
+            this.label6.Location = new System.Drawing.Point(449, 271);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 27);
             this.label6.TabIndex = 5;
@@ -147,7 +147,7 @@
             // 
             this.backbutton.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.backbutton.Font = new System.Drawing.Font("Intel Clear Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbutton.Location = new System.Drawing.Point(39, 447);
+            this.backbutton.Location = new System.Drawing.Point(32, 460);
             this.backbutton.Name = "backbutton";
             this.backbutton.Size = new System.Drawing.Size(95, 35);
             this.backbutton.TabIndex = 9;
@@ -157,41 +157,44 @@
             // 
             // pricebox
             // 
-            this.pricebox.Location = new System.Drawing.Point(551, 213);
+            this.pricebox.Location = new System.Drawing.Point(551, 208);
+            this.pricebox.Multiline = true;
             this.pricebox.Name = "pricebox";
-            this.pricebox.Size = new System.Drawing.Size(205, 22);
+            this.pricebox.Size = new System.Drawing.Size(205, 32);
             this.pricebox.TabIndex = 10;
             // 
             // serialbox
             // 
-            this.serialbox.Location = new System.Drawing.Point(566, 129);
+            this.serialbox.Location = new System.Drawing.Point(566, 135);
+            this.serialbox.Multiline = true;
             this.serialbox.Name = "serialbox";
-            this.serialbox.Size = new System.Drawing.Size(190, 22);
+            this.serialbox.Size = new System.Drawing.Size(190, 27);
             this.serialbox.TabIndex = 11;
             // 
             // descriptionbox
             // 
-            this.descriptionbox.Location = new System.Drawing.Point(179, 349);
+            this.descriptionbox.Location = new System.Drawing.Point(157, 343);
             this.descriptionbox.Multiline = true;
             this.descriptionbox.Name = "descriptionbox";
-            this.descriptionbox.Size = new System.Drawing.Size(208, 79);
+            this.descriptionbox.Size = new System.Drawing.Size(230, 79);
             this.descriptionbox.TabIndex = 12;
             this.descriptionbox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // namebox
             // 
-            this.namebox.Location = new System.Drawing.Point(112, 218);
+            this.namebox.Location = new System.Drawing.Point(112, 208);
+            this.namebox.Multiline = true;
             this.namebox.Name = "namebox";
-            this.namebox.Size = new System.Drawing.Size(260, 22);
+            this.namebox.Size = new System.Drawing.Size(275, 32);
             this.namebox.TabIndex = 13;
             // 
             // qrButton
             // 
             this.qrButton.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.qrButton.Font = new System.Drawing.Font("Intel Clear", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qrButton.Location = new System.Drawing.Point(279, 140);
+            this.qrButton.Location = new System.Drawing.Point(279, 129);
             this.qrButton.Name = "qrButton";
-            this.qrButton.Size = new System.Drawing.Size(93, 29);
+            this.qrButton.Size = new System.Drawing.Size(108, 40);
             this.qrButton.TabIndex = 14;
             this.qrButton.Text = "Add Qr";
             this.qrButton.UseVisualStyleBackColor = false;
@@ -210,7 +213,7 @@
             // brandbox
             // 
             this.brandbox.FormattingEnabled = true;
-            this.brandbox.Location = new System.Drawing.Point(551, 290);
+            this.brandbox.Location = new System.Drawing.Point(551, 277);
             this.brandbox.Name = "brandbox";
             this.brandbox.Size = new System.Drawing.Size(205, 24);
             this.brandbox.TabIndex = 16;
@@ -219,15 +222,15 @@
             // categorybox
             // 
             this.categorybox.FormattingEnabled = true;
-            this.categorybox.Location = new System.Drawing.Point(139, 277);
+            this.categorybox.Location = new System.Drawing.Point(133, 277);
             this.categorybox.Name = "categorybox";
-            this.categorybox.Size = new System.Drawing.Size(233, 24);
+            this.categorybox.Size = new System.Drawing.Size(254, 24);
             this.categorybox.TabIndex = 17;
             // 
             // estatebox
             // 
             this.estatebox.FormattingEnabled = true;
-            this.estatebox.Location = new System.Drawing.Point(551, 367);
+            this.estatebox.Location = new System.Drawing.Point(551, 343);
             this.estatebox.Name = "estatebox";
             this.estatebox.Size = new System.Drawing.Size(205, 24);
             this.estatebox.TabIndex = 19;
@@ -236,7 +239,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(447, 367);
+            this.label9.Location = new System.Drawing.Point(447, 343);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 27);
             this.label9.TabIndex = 18;

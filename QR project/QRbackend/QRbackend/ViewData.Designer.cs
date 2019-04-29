@@ -39,9 +39,10 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(680, 36);
+            this.button1.Location = new System.Drawing.Point(604, 29);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 56);
+            this.button1.Size = new System.Drawing.Size(178, 45);
             this.button1.TabIndex = 0;
             this.button1.Text = "Personal";
             this.button1.UseVisualStyleBackColor = false;
@@ -51,9 +52,10 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button2.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(398, 36);
+            this.button2.Location = new System.Drawing.Point(354, 29);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 56);
+            this.button2.Size = new System.Drawing.Size(178, 45);
             this.button2.TabIndex = 1;
             this.button2.Text = "Inventory";
             this.button2.UseVisualStyleBackColor = false;
@@ -62,20 +64,22 @@
             // dataGridData
             // 
             this.dataGridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridData.Location = new System.Drawing.Point(77, 117);
+            this.dataGridData.Enabled = false;
+            this.dataGridData.Location = new System.Drawing.Point(68, 94);
+            this.dataGridData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridData.Name = "dataGridData";
             this.dataGridData.RowTemplate.Height = 28;
-            this.dataGridData.Size = new System.Drawing.Size(1125, 417);
+            this.dataGridData.Size = new System.Drawing.Size(1000, 334);
             this.dataGridData.TabIndex = 3;
             // 
             // btn_regresar
             // 
             this.btn_regresar.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btn_regresar.Font = new System.Drawing.Font("Intel Clear Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_regresar.Location = new System.Drawing.Point(23, 20);
+            this.btn_regresar.Location = new System.Drawing.Point(20, 16);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(102, 38);
+            this.btn_regresar.Size = new System.Drawing.Size(91, 30);
             this.btn_regresar.TabIndex = 9;
             this.btn_regresar.Text = "Back";
             this.btn_regresar.UseVisualStyleBackColor = false;
@@ -83,13 +87,14 @@
             // 
             // ViewData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 546);
+            this.ClientSize = new System.Drawing.Size(1145, 437);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.dataGridData);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ViewData";
             this.Text = "ViewData";
             this.Load += new System.EventHandler(this.ViewData_Load);

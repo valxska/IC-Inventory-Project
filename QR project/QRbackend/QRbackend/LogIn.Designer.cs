@@ -38,29 +38,29 @@
             // 
             // textPass
             // 
-            this.textPass.Location = new System.Drawing.Point(274, 288);
-            this.textPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textPass.Location = new System.Drawing.Point(244, 230);
             this.textPass.Multiline = true;
             this.textPass.Name = "textPass";
-            this.textPass.Size = new System.Drawing.Size(216, 33);
+            this.textPass.PasswordChar = '*';
+            this.textPass.Size = new System.Drawing.Size(192, 27);
             this.textPass.TabIndex = 11;
+            this.textPass.TextChanged += new System.EventHandler(this.textPass_TextChanged);
             // 
             // textWWID
             // 
-            this.textWWID.Location = new System.Drawing.Point(274, 204);
-            this.textWWID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textWWID.Location = new System.Drawing.Point(244, 163);
             this.textWWID.Multiline = true;
             this.textWWID.Name = "textWWID";
-            this.textWWID.Size = new System.Drawing.Size(216, 33);
+            this.textWWID.Size = new System.Drawing.Size(192, 27);
             this.textWWID.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(124, 288);
+            this.label3.Location = new System.Drawing.Point(110, 230);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 32);
+            this.label3.Size = new System.Drawing.Size(101, 27);
             this.label3.TabIndex = 9;
             this.label3.Text = "Password:";
             // 
@@ -68,9 +68,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(124, 204);
+            this.label2.Location = new System.Drawing.Point(110, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 32);
+            this.label2.Size = new System.Drawing.Size(73, 27);
             this.label2.TabIndex = 8;
             this.label2.Text = "WWID:";
             // 
@@ -79,9 +79,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Intel Clear Light", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(144, 48);
+            this.label1.Location = new System.Drawing.Point(128, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(427, 69);
+            this.label1.Size = new System.Drawing.Size(353, 57);
             this.label1.TabIndex = 7;
             this.label1.Text = "Inventory system";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,10 +91,9 @@
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Font = new System.Drawing.Font("Intel Clear Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(274, 390);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(244, 312);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 49);
+            this.button1.Size = new System.Drawing.Size(144, 39);
             this.button1.TabIndex = 6;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
@@ -102,10 +101,10 @@
             // 
             // LogIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(702, 475);
+            this.ClientSize = new System.Drawing.Size(624, 380);
             this.Controls.Add(this.textPass);
             this.Controls.Add(this.textWWID);
             this.Controls.Add(this.label3);
