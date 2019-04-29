@@ -38,5 +38,10 @@ namespace QRbackend
             Menu fm = new Menu(idBorrowPerson);
             fm.Show();
         }
+
+        private void ViewData_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

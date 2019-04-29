@@ -24,6 +24,8 @@ namespace QRbackend
             device = pdevice;
             bd = new BD();
 
+            comboBoxID.DataSource = bd.PersonID();
+
             comboType.Items.Add("Interno");   // 0
             comboType.Items.Add("Externo");    // 1
 
@@ -63,11 +65,12 @@ namespace QRbackend
             string phone = String.Empty;
             string email = String.Empty;
             string description = String.Empty;
+            string type = String.Empty;
 
-            if(text_ID.Text != id && text_Name.Text != name && text_LastName.Text != lastname && text_Phone.Text != phone && text_Email.Text != email && text_Description.Text != description)
+            if (comboBoxID.Text != id && text_Name.Text != name && text_LastName.Text != lastname && text_Phone.Text != phone && text_Email.Text != email && text_Description.Text != description && comboType.Text != type) ;
             {
                 int eventtype = mode ? 2 : 1;
-                id = text_ID.Text;
+                id = comboBoxID.Text;
                 name = text_Name.Text;
                 lastname = text_LastName.Text;
                 phone = text_Phone.Text;
@@ -98,6 +101,11 @@ namespace QRbackend
         private void comboType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

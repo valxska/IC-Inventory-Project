@@ -35,7 +35,6 @@
             this.Phone = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.text_ID = new System.Windows.Forms.TextBox();
             this.text_Name = new System.Windows.Forms.TextBox();
             this.text_LastName = new System.Windows.Forms.TextBox();
             this.text_Phone = new System.Windows.Forms.TextBox();
@@ -45,6 +44,7 @@
             this.btn_Send = new System.Windows.Forms.Button();
             this.text_Description = new System.Windows.Forms.RichTextBox();
             this.comboType = new System.Windows.Forms.ComboBox();
+            this.comboBoxID = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -120,14 +120,6 @@
             this.label7.Size = new System.Drawing.Size(113, 27);
             this.label7.TabIndex = 6;
             this.label7.Text = "Description";
-            // 
-            // text_ID
-            // 
-            this.text_ID.Location = new System.Drawing.Point(289, 102);
-            this.text_ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.text_ID.Name = "text_ID";
-            this.text_ID.Size = new System.Drawing.Size(214, 26);
-            this.text_ID.TabIndex = 7;
             // 
             // text_Name
             // 
@@ -216,13 +208,24 @@
             this.comboType.TabIndex = 19;
             this.comboType.SelectedIndexChanged += new System.EventHandler(this.comboType_SelectedIndexChanged);
             // 
+            // comboBoxID
+            // 
+            this.comboBoxID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBoxID.FormattingEnabled = true;
+            this.comboBoxID.Location = new System.Drawing.Point(289, 101);
+            this.comboBoxID.Name = "comboBoxID";
+            this.comboBoxID.Size = new System.Drawing.Size(214, 28);
+            this.comboBoxID.TabIndex = 20;
+            this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
+            // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-
             this.ClientSize = new System.Drawing.Size(711, 508);
+            this.Controls.Add(this.comboBoxID);
             this.Controls.Add(this.comboType);
             this.Controls.Add(this.text_Description);
             this.Controls.Add(this.btn_Send);
@@ -232,7 +235,6 @@
             this.Controls.Add(this.text_Phone);
             this.Controls.Add(this.text_LastName);
             this.Controls.Add(this.text_Name);
-            this.Controls.Add(this.text_ID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Phone);
@@ -257,7 +259,6 @@
         private System.Windows.Forms.Label Phone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox text_ID;
         private System.Windows.Forms.TextBox text_Name;
         private System.Windows.Forms.TextBox text_LastName;
         private System.Windows.Forms.TextBox text_Phone;
@@ -267,5 +268,6 @@
         private System.Windows.Forms.Button btn_Send;
         private System.Windows.Forms.RichTextBox text_Description;
         private System.Windows.Forms.ComboBox comboType;
+        private System.Windows.Forms.ComboBox comboBoxID;
     }
 }

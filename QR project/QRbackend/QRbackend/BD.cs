@@ -701,5 +701,38 @@ namespace QRbackend
 
         }
 
+        public List<string> PersonID()
+        {
+            List<string> rowList = new List<string>();
+            try
+            {
+
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select ID From person");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetString(0));
+
+                }
+
+                this.connection.Close();
+
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return rowList;
+
+        }
+
+        
+
     }
 }

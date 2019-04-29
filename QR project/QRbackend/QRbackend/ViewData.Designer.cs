@@ -92,6 +92,7 @@
             this.Controls.Add(this.button1);
             this.Name = "ViewData";
             this.Text = "ViewData";
+            this.Load += new System.EventHandler(this.ViewData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridData)).EndInit();
             this.ResumeLayout(false);
 
