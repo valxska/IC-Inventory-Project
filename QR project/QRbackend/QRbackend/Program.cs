@@ -17,16 +17,14 @@ namespace QRbackend
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogIn());
+            Application.Run(new AddDeviceForm("ABC1"));
 
 
-
-
-
+            
 
 
             //BD PruebaDeBD = new BD();
-            //int x = PruebaDeBD.VerifyEmail ("vale@intel.com", 1 );
+            //int x = PruebaDeBD.AddDevice("ABCDEFG", "FDKMF83", 20000, "Prueba Add device", "Samsung", "Bueno", "Computadora");
 
 
             //bool x = PruebaDeBD.AddEvent(1, 2, 2, 1, "Rawayana");

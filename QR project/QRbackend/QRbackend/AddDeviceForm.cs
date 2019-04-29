@@ -46,7 +46,7 @@ namespace QRbackend
         private void backbutton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu fm = new Menu(idBorrowPerson);
+           GeneratorForm fm = new GeneratorForm();
             fm.Show();
         }
 
@@ -70,6 +70,11 @@ namespace QRbackend
         private void qrText_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void AddDeviceForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
