@@ -50,7 +50,7 @@ namespace QRbackend
         private void qrButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            GeneratorForm fm = new GeneratorForm();
+            GeneratorForm fm = new GeneratorForm(idBorrowPerson);
             fm.Show();
         }
 
@@ -74,6 +74,7 @@ namespace QRbackend
             int idDevice = bd.VerifyDevice(codigoQr);
             int idCategory = bd.VerifyCategory(category);
             int idBrand = bd.VerifyBrand(brand);
+            //if(name==String.Empty || category )
             bd.AddDevice(codigoQr,serialcode,price,description,brand,estate,category);
 
         }

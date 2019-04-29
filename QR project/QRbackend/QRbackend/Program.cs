@@ -14,14 +14,14 @@ namespace QRbackend
         [STAThread]
         static void Main()
         {
-            /*
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LogIn());
 
             
 
-
+            /*
             BD PruebaDeBD = new BD();
             //int x = PruebaDeBD.AddDevice("ABCDEFG", "FDKMF83", 20000, "Prueba Add device", "Samsung", "Bueno", "Computadora");
             int x = PruebaDeBD.VerifyBrand("Samsung");

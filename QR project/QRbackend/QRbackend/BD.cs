@@ -659,7 +659,7 @@ namespace QRbackend
             {
                 this.connection.Open();
                                
-                string command = "select * from person";
+                string command = "select ID, personName, personLastName, available, authorized from person";
                 MySqlDataAdapter adp = new MySqlDataAdapter(command, this.connection );
                 DataTable info = new DataTable();
                 adp.Fill(info);
@@ -683,7 +683,7 @@ namespace QRbackend
             {
                 this.connection.Open();
 
-                string command = "select * from devices";
+                string command = "select QR, serialCode, price, description, idBrand, available, idEstado from devices";
                 MySqlDataAdapter adp = new MySqlDataAdapter(command, this.connection);
                 DataTable info = new DataTable();
                 adp.Fill(info);

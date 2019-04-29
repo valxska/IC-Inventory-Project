@@ -66,7 +66,7 @@ namespace QRbackend
 
             if(text_ID.Text != id && text_Name.Text != name && text_LastName.Text != lastname && text_Phone.Text != phone && text_Email.Text != email && text_Description.Text != description)
             {
-                int eventtype = mode ? 2 : 1;
+                int eventtype = mode ? 2 : 1; 
                 id = text_ID.Text;
                 name = text_Name.Text;
                 lastname = text_LastName.Text;
