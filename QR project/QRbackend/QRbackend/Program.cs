@@ -17,7 +17,7 @@ namespace QRbackend
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddDeviceForm("ABC1"));
+            Application.Run(new LogIn());
 
 
             

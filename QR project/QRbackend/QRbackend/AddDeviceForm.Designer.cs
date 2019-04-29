@@ -54,9 +54,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 266);
+            this.label1.Location = new System.Drawing.Point(34, 213);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 32);
+            this.label1.Size = new System.Drawing.Size(68, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
@@ -64,9 +64,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(38, 175);
+            this.label2.Location = new System.Drawing.Point(34, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 32);
+            this.label2.Size = new System.Drawing.Size(38, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "Qr:";
             // 
@@ -74,9 +74,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 339);
+            this.label3.Location = new System.Drawing.Point(34, 271);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 32);
+            this.label3.Size = new System.Drawing.Size(93, 27);
             this.label3.TabIndex = 2;
             this.label3.Text = "Category";
             // 
@@ -84,9 +84,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(498, 161);
+            this.label4.Location = new System.Drawing.Point(443, 129);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 32);
+            this.label4.Size = new System.Drawing.Size(117, 27);
             this.label4.TabIndex = 3;
             this.label4.Text = "Serial Code:";
             // 
@@ -94,9 +94,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(504, 260);
+            this.label5.Location = new System.Drawing.Point(448, 208);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 32);
+            this.label5.Size = new System.Drawing.Size(59, 27);
             this.label5.TabIndex = 4;
             this.label5.Text = "Price:";
             // 
@@ -104,9 +104,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(503, 362);
+            this.label6.Location = new System.Drawing.Point(447, 290);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 32);
+            this.label6.Size = new System.Drawing.Size(69, 27);
             this.label6.TabIndex = 5;
             this.label6.Text = "Brand:";
             // 
@@ -114,9 +114,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 429);
+            this.label7.Location = new System.Drawing.Point(34, 343);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 32);
+            this.label7.Size = new System.Drawing.Size(117, 27);
             this.label7.TabIndex = 6;
             this.label7.Text = "Description:";
             // 
@@ -125,9 +125,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Intel Clear Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label8.Location = new System.Drawing.Point(321, 51);
+            this.label8.Location = new System.Drawing.Point(285, 41);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(267, 62);
+            this.label8.Size = new System.Drawing.Size(224, 53);
             this.label8.TabIndex = 7;
             this.label8.Text = "Add Device";
             // 
@@ -135,10 +135,9 @@
             // 
             this.insertButton.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.insertButton.Font = new System.Drawing.Font("Intel Clear Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insertButton.Location = new System.Drawing.Point(780, 575);
-            this.insertButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.insertButton.Location = new System.Drawing.Point(693, 460);
             this.insertButton.Name = "insertButton";
-            this.insertButton.Size = new System.Drawing.Size(84, 44);
+            this.insertButton.Size = new System.Drawing.Size(75, 35);
             this.insertButton.TabIndex = 8;
             this.insertButton.Text = "Insert";
             this.insertButton.UseVisualStyleBackColor = false;
@@ -148,10 +147,9 @@
             // 
             this.backbutton.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.backbutton.Font = new System.Drawing.Font("Intel Clear Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backbutton.Location = new System.Drawing.Point(44, 559);
-            this.backbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.backbutton.Location = new System.Drawing.Point(39, 447);
             this.backbutton.Name = "backbutton";
-            this.backbutton.Size = new System.Drawing.Size(107, 44);
+            this.backbutton.Size = new System.Drawing.Size(95, 35);
             this.backbutton.TabIndex = 9;
             this.backbutton.Text = "Back";
             this.backbutton.UseVisualStyleBackColor = false;
@@ -159,46 +157,41 @@
             // 
             // pricebox
             // 
-            this.pricebox.Location = new System.Drawing.Point(620, 266);
-            this.pricebox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pricebox.Location = new System.Drawing.Point(551, 213);
             this.pricebox.Name = "pricebox";
-            this.pricebox.Size = new System.Drawing.Size(230, 26);
+            this.pricebox.Size = new System.Drawing.Size(205, 22);
             this.pricebox.TabIndex = 10;
             // 
             // serialbox
             // 
-            this.serialbox.Location = new System.Drawing.Point(637, 161);
-            this.serialbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.serialbox.Location = new System.Drawing.Point(566, 129);
             this.serialbox.Name = "serialbox";
-            this.serialbox.Size = new System.Drawing.Size(213, 26);
+            this.serialbox.Size = new System.Drawing.Size(190, 22);
             this.serialbox.TabIndex = 11;
             // 
             // descriptionbox
             // 
-            this.descriptionbox.Location = new System.Drawing.Point(201, 436);
-            this.descriptionbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.descriptionbox.Location = new System.Drawing.Point(179, 349);
             this.descriptionbox.Multiline = true;
             this.descriptionbox.Name = "descriptionbox";
-            this.descriptionbox.Size = new System.Drawing.Size(234, 98);
+            this.descriptionbox.Size = new System.Drawing.Size(208, 79);
             this.descriptionbox.TabIndex = 12;
             this.descriptionbox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // namebox
             // 
-            this.namebox.Location = new System.Drawing.Point(126, 272);
-            this.namebox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.namebox.Location = new System.Drawing.Point(112, 218);
             this.namebox.Name = "namebox";
-            this.namebox.Size = new System.Drawing.Size(292, 26);
+            this.namebox.Size = new System.Drawing.Size(260, 22);
             this.namebox.TabIndex = 13;
             // 
             // qrButton
             // 
             this.qrButton.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.qrButton.Font = new System.Drawing.Font("Intel Clear", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qrButton.Location = new System.Drawing.Point(314, 175);
-            this.qrButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.qrButton.Location = new System.Drawing.Point(279, 140);
             this.qrButton.Name = "qrButton";
-            this.qrButton.Size = new System.Drawing.Size(105, 36);
+            this.qrButton.Size = new System.Drawing.Size(93, 29);
             this.qrButton.TabIndex = 14;
             this.qrButton.Text = "Add Qr";
             this.qrButton.UseVisualStyleBackColor = false;
@@ -207,9 +200,9 @@
             // qrText
             // 
             this.qrText.AutoSize = true;
-            this.qrText.Location = new System.Drawing.Point(122, 186);
+            this.qrText.Location = new System.Drawing.Point(108, 149);
             this.qrText.Name = "qrText";
-            this.qrText.Size = new System.Drawing.Size(153, 20);
+            this.qrText.Size = new System.Drawing.Size(152, 17);
             this.qrText.TabIndex = 15;
             this.qrText.Text = "....................................";
             this.qrText.Click += new System.EventHandler(this.qrText_Click);
@@ -217,47 +210,44 @@
             // brandbox
             // 
             this.brandbox.FormattingEnabled = true;
-            this.brandbox.Location = new System.Drawing.Point(620, 362);
-            this.brandbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.brandbox.Location = new System.Drawing.Point(551, 290);
             this.brandbox.Name = "brandbox";
-            this.brandbox.Size = new System.Drawing.Size(230, 28);
+            this.brandbox.Size = new System.Drawing.Size(205, 24);
             this.brandbox.TabIndex = 16;
             this.brandbox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // categorybox
             // 
             this.categorybox.FormattingEnabled = true;
-            this.categorybox.Location = new System.Drawing.Point(156, 346);
-            this.categorybox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.categorybox.Location = new System.Drawing.Point(139, 277);
             this.categorybox.Name = "categorybox";
-            this.categorybox.Size = new System.Drawing.Size(262, 28);
+            this.categorybox.Size = new System.Drawing.Size(233, 24);
             this.categorybox.TabIndex = 17;
             // 
             // estatebox
             // 
             this.estatebox.FormattingEnabled = true;
-            this.estatebox.Location = new System.Drawing.Point(620, 459);
-            this.estatebox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.estatebox.Location = new System.Drawing.Point(551, 367);
             this.estatebox.Name = "estatebox";
-            this.estatebox.Size = new System.Drawing.Size(230, 28);
+            this.estatebox.Size = new System.Drawing.Size(205, 24);
             this.estatebox.TabIndex = 19;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(503, 459);
+            this.label9.Location = new System.Drawing.Point(447, 367);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 32);
+            this.label9.Size = new System.Drawing.Size(71, 27);
             this.label9.TabIndex = 18;
             this.label9.Text = "Estate:";
             // 
             // AddDeviceForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(900, 634);
+            this.ClientSize = new System.Drawing.Size(800, 507);
             this.Controls.Add(this.estatebox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.categorybox);
@@ -278,7 +268,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddDeviceForm";
             this.Text = "AddDeviceForm";
             this.Load += new System.EventHandler(this.AddDeviceForm_Load);

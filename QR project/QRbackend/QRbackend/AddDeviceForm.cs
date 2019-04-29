@@ -24,6 +24,17 @@ namespace QRbackend
             bd = new BD();
 
             //SE DEBEN AÑADIR LAS OPCIONES DE AMBOS COMBOBOX (BRAND Y CATEGORY)
+
+            categorybox.Items.Add("Categoria1");   // 1
+            categorybox.Items.Add("Categoria2");    // 2
+            categorybox.Items.Add("Categoria3");    // 3
+
+            brandbox.Items.Add("brand1");    // 2
+            brandbox.Items.Add("brand2");    // 3
+
+            estatebox.Items.Add("estate1");    // 2
+            estatebox.Items.Add("estate2");    // 3
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,7 +57,7 @@ namespace QRbackend
         private void backbutton_Click(object sender, EventArgs e)
         {
             this.Hide();
-           GeneratorForm fm = new GeneratorForm();
+           GeneratorForm fm = new GeneratorForm(idBorrowPerson);
             fm.Show();
         }
 
