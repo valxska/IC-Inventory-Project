@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Configuration;
+
+
 
 //Funciones respectivas a la BD
 
@@ -12,7 +15,7 @@ namespace QRbackend
 {
     class BD
     {
-        private MySqlConnection connection = new MySqlConnection("server = localhost; user id = root; password = root; persistsecurityinfo = True; database = icproyect");
+        private MySqlConnection connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["QRbackend.Properties.Settings.icproyectConnectionString"].ConnectionString);
 
         public int LogIn(String pWWID, String pPassword)
         {
