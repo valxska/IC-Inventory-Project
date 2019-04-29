@@ -12,7 +12,7 @@ namespace QRbackend
 {
     class BD
     {
-        private MySqlConnection connection = new MySqlConnection("server = localhost; user id = root; password = Poder*16; persistsecurityinfo = True; database = inventario_ic");
+        private MySqlConnection connection = new MySqlConnection("server = localhost; user id = root; password = root; persistsecurityinfo = True; database = icproyect");
 
         public int LogIn(String pWWID, String pPassword)
         {
@@ -637,7 +637,6 @@ namespace QRbackend
             code.Connection = this.connection;
 
             code.CommandText = ("Insert Into history (idEvent,idDevices, idPerson, BorrowIdPerson) Values (" + pIdEvent + "," + pIdDevice + ", "+ pIdPerson+", "+pBorrowIdPerson+") ");
-            
             code.ExecuteReader();
             this.connection.Close();
             return true;

@@ -94,5 +94,10 @@ namespace QRbackend
             Menu fm = new Menu(idBorrowPerson);
             fm.Show();
         }
+
+        private void comboType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

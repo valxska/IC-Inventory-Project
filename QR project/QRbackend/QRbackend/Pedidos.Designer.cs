@@ -214,12 +214,14 @@
             this.comboType.Name = "comboType";
             this.comboType.Size = new System.Drawing.Size(214, 28);
             this.comboType.TabIndex = 19;
+            this.comboType.SelectedIndexChanged += new System.EventHandler(this.comboType_SelectedIndexChanged);
             // 
             // Pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+
             this.ClientSize = new System.Drawing.Size(711, 508);
             this.Controls.Add(this.comboType);
             this.Controls.Add(this.text_Description);
