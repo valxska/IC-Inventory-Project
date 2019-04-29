@@ -16,7 +16,7 @@ namespace QRbackend
         private int idBorrowPerson;
         private BD bd;
 
-        public AddDeviceForm(String codigoQr)
+        public AddDeviceForm(String codigoQr, int idBorrowPerson)
         {
             InitializeComponent();
             this.idBorrowPerson = idBorrowPerson;
@@ -39,7 +39,7 @@ namespace QRbackend
         private void qrButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddDeviceForm fm = new AddDeviceForm(codigoQr);
+            GeneratorForm fm = new GeneratorForm(idBorrowPerson);
             fm.Show();
         }
 

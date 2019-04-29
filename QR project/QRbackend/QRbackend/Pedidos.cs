@@ -92,5 +92,10 @@ namespace QRbackend
         {
 
         }
+
+        private void comboType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
