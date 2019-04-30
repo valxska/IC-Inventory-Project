@@ -39,6 +39,8 @@ namespace QRbackend
             {
                 int eventtype = mode ? 2 : 1;
                 id = comboB.Text;
+                email = text_Email.Text;
+                description = text_Description.Text;
                 
                 description = text_Description.Text;
            
@@ -51,10 +53,8 @@ namespace QRbackend
                 Menu fm = new Menu(idBorrowPerson);
                 fm.Show();
             }
-
-
-
-
+            
+            
         }
     }
     

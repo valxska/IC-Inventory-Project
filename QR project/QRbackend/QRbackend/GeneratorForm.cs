@@ -70,9 +70,5 @@ namespace QRbackend
 
         }
 
-        private void GeneratorForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

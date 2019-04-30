@@ -127,7 +127,6 @@
             this.Controls.Add(this.picturebox);
             this.Name = "GeneratorForm";
             this.Text = "GeneratorForm";
-            this.Load += new System.EventHandler(this.GeneratorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

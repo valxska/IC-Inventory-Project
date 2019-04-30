@@ -87,7 +87,8 @@ namespace QRbackend
                 timer1.Stop();
                 this.Hide();
                 finalFrame.Stop();
-                Pedidos pedido = new Pedidos(mode, txtQR.Text, idBorrowPerson);
+
+                Pedidos pedido = new Pedidos(mode, txtQR.Text, idBorrowPerson);   // El lector siempre se dirige a pedido y deberia tambien mandar a return
                 pedido.Show();
             }
         }
