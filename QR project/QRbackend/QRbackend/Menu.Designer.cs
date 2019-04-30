@@ -112,9 +112,10 @@
             // 
             this.addpersonbutton.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.addpersonbutton.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addpersonbutton.Location = new System.Drawing.Point(220, 237);
+            this.addpersonbutton.Location = new System.Drawing.Point(222, 222);
+            this.addpersonbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addpersonbutton.Name = "addpersonbutton";
-            this.addpersonbutton.Size = new System.Drawing.Size(179, 39);
+            this.addpersonbutton.Size = new System.Drawing.Size(159, 31);
             this.addpersonbutton.TabIndex = 10;
             this.addpersonbutton.Text = "AddPerson";
             this.addpersonbutton.UseVisualStyleBackColor = false;
@@ -125,7 +126,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(635, 330);
+            this.ClientSize = new System.Drawing.Size(564, 264);
             this.Controls.Add(this.addpersonbutton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_exit);

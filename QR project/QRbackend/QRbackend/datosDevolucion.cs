@@ -12,9 +12,51 @@ namespace QRbackend
 {
     public partial class DatosDevolucion : Form
     {
-        public DatosDevolucion()
+        private bool mode;
+        private BD bd;
+        private string device;
+        private int idBorrowPerson;
+
+      
+        public DatosDevolucion(int idBorrowPerson)
         {
             InitializeComponent();
         }
+
+        private void btn_Back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu fm = new Menu(idBorrowPerson);
+            fm.Show();
+        }
+
+        private void btn_Send_Click(object sender, EventArgs e)
+        {
+            string id = String.Empty;          
+            string email = String.Empty;
+            string description = String.Empty;
+            if (comboB.Text != id && text_Email.Text != email && text_Description.Text != description);
+            {
+                int eventtype = mode ? 2 : 1;
+                id = comboB.Text;
+                
+                description = text_Description.Text;
+           
+
+                int idPerson = bd.VerifyPerson(id);
+                bd.AddEvent(bd.VerifyDevice(device), idPerson, idBorrowPerson, eventtype, description);
+
+                MessageBox.Show("Successful transaction");
+                this.Hide();
+                Menu fm = new Menu(idBorrowPerson);
+                fm.Show();
+            }
+
+
+
+
+        }
     }
+    
+    
 }

@@ -143,6 +143,9 @@
     <EmbeddedResource Include="AddPersonForm.resx">
       <DependentUpon>AddPersonForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DatosDevolucion.resx">
+      <DependentUpon>DatosDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GeneratorForm.resx">
       <DependentUpon>GeneratorForm.cs</DependentUpon>
     </EmbeddedResource>

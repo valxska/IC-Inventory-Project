@@ -109,5 +109,10 @@ namespace QRbackend
         {
             
         }
+
+        private void Pedidos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
