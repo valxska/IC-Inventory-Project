@@ -34,6 +34,7 @@
             this.btn_devolucion = new System.Windows.Forms.Button();
             this.btn_prestamo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.addpersonbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -107,12 +108,25 @@
             this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // addpersonbutton
+            // 
+            this.addpersonbutton.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.addpersonbutton.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addpersonbutton.Location = new System.Drawing.Point(220, 237);
+            this.addpersonbutton.Name = "addpersonbutton";
+            this.addpersonbutton.Size = new System.Drawing.Size(179, 39);
+            this.addpersonbutton.TabIndex = 10;
+            this.addpersonbutton.Text = "AddPerson";
+            this.addpersonbutton.UseVisualStyleBackColor = false;
+            this.addpersonbutton.Click += new System.EventHandler(this.addpersonbutton_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(635, 330);
+            this.Controls.Add(this.addpersonbutton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_admin);
@@ -134,5 +148,6 @@
         private System.Windows.Forms.Button btn_devolucion;
         private System.Windows.Forms.Button btn_prestamo;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addpersonbutton;
     }
 }

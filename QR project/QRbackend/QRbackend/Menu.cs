@@ -46,5 +46,13 @@ namespace QRbackend
             AddDeviceForm fm = new AddDeviceForm(null,idBorrowPerson);
             fm.Show();
         }
+
+        private void addpersonbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddPersonForm fm = new AddPersonForm();
+            fm.Show();
+
+        }
     }
 }

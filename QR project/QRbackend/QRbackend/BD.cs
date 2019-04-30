@@ -15,7 +15,7 @@ namespace QRbackend
 {
     class BD
     {
-        private MySqlConnection connection = new MySqlConnection("Database = inventario_ic; Data Source = localhost; User Id = root; Password=Poder*16");
+        private MySqlConnection connection = new MySqlConnection("Database = inventario_ic; Data Source = localhost; User Id = root; Password=root");
 
 
         public int LogIn(String pWWID, String pPassword)
@@ -731,6 +731,43 @@ namespace QRbackend
             return rowList;
 
         }
+        public int VerifyType(String pType)
+        {
+
+            List<int> rowList = new List<int>();
+            try
+            {
+
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select idType From typd where idtype = '" + pType + "' ");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetInt32(0));
+
+                }
+                if (rowList.Count == 0)
+                {
+                    this.connection.Close();
+                    return -1;
+
+                }
+
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return rowList[0];
+
+
+        }
 
         public int VerifyPerson(String pId)
         {
@@ -767,6 +804,40 @@ namespace QRbackend
             }
             return rowList[0];
 
+
+        }
+
+        public bool AddPerson(String pId, String pName, String pLastname, String pType,int pAllowed)   //
+        {
+            try
+            {
+                MySqlCommand code = new MySqlCommand();
+
+                
+                int idPerson = VerifyPerson(pId);
+  
+                if (idPerson == -1)
+                {
+
+                    int idType = VerifyType(pType);
+                    this.connection.Open();
+                    code.Connection = this.connection;
+
+                    code.CommandText = ("Insert Into person  (id, personname, lpersonlastname, , idType, available, authorized) Values ('" + pId + "' , '" + pName + "', " + pLastname + ", " + idType + ", 1, " + pAllowed + ")");
+
+                    MySqlDataReader rdr = code.ExecuteReader();
+                    this.connection.Close();
+
+                }
+   
+                return true;
+            }
+            catch (Exception e)
+            {
+                this.connection.Close();
+
+            }
+            return false;
 
         }
 
