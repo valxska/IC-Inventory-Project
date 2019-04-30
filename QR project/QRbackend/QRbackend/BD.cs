@@ -15,7 +15,7 @@ namespace QRbackend
 {
     class BD
     {
-        private MySqlConnection connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["QRbackend.Properties.Settings.icproyectConnectionString"].ConnectionString);
+        private MySqlConnection connection = new MySqlConnection("Database = inventario_ic; Data Source = localhost; User Id = root; Password=Poder*16");
 
 
         public int LogIn(String pWWID, String pPassword)

@@ -71,11 +71,13 @@ namespace QRbackend
             {
                 int eventtype = mode ? 2 : 1;
                 id = comboBoxID.Text;
+
                 name = text_Name.Text;
                 lastname = text_LastName.Text;
                 phone = text_Phone.Text;
                 email = text_Email.Text;
                 description = text_Description.Text;
+                type = comboType.Text;
 
                 int idPerson = bd.VerifyPerson(id, name, lastname, comboType.SelectedIndex +1 , 0, email, phone);
                 bd.AddEvent(bd.VerifyDevice(device), idPerson, idBorrowPerson, eventtype, description);
