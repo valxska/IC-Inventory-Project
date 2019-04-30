@@ -12,9 +12,11 @@ namespace QRbackend
 {
     public partial class AddPersonForm : Form
     {
+        private BD bd;
         public AddPersonForm()
         {
             InitializeComponent();
+            bd = new BD();
 
             typebox.Items.Add("Interno");   // 1
             typebox.Items.Add("Externo");    // 2
@@ -34,6 +36,7 @@ namespace QRbackend
             String telefono = phonebox.Text;
             String email = emailbox.Text;
             String id = idbox.Text;
+            String phone = phonebox.Text;
             int allowed;
             if(tipo == "Interno")
             {
@@ -49,6 +52,7 @@ namespace QRbackend
                 tipo = "Administrador";
                 allowed = 1;
             }
+            bd.AddPerson(id,nombre,apellido,tipo,allowed);
 
 
         }

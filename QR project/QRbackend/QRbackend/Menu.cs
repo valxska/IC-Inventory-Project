@@ -47,8 +47,11 @@ namespace QRbackend
             fm.Show();
         }
 
-        private void Menu_Load(object sender, EventArgs e)
+        private void addpersonbutton_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            AddPersonForm fm = new AddPersonForm();
+            fm.Show();
 
         }
     }
