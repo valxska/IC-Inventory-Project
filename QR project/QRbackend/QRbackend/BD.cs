@@ -732,7 +732,44 @@ namespace QRbackend
 
         }
 
-        
+        public int VerifyPerson(String pId)
+        {
+
+            List<int> rowList = new List<int>();
+            try
+            {
+
+                MySqlCommand code = new MySqlCommand();
+                this.connection.Open();
+
+                code.Connection = this.connection;
+
+                code.CommandText = ("Select id From person where id = '" + pId + "' ");
+
+                MySqlDataReader rdr = code.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    rowList.Add(rdr.GetInt32(0));
+
+                }
+                if (rowList.Count == 0)
+                {
+                    this.connection.Close();
+                    return -1;
+
+                }
+
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+            return rowList[0];
+
+
+        }
+
 
     }
 }
