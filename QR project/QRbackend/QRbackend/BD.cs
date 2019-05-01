@@ -823,7 +823,7 @@ namespace QRbackend
                     this.connection.Open();
                     code.Connection = this.connection;
 
-                    code.CommandText = ("Insert Into person  (id, personname, lpersonlastname, , idType, available, authorized) Values ('" + pId + "' , '" + pName + "', " + pLastname + ", " + idType + ", 1, " + pAllowed + ")");
+                    code.CommandText = ("Insert Into person  (id, personname, lpersonlastname, idType, available, authorized) Values ('" + pId + "' , '" + pName + "', " + pLastname + ", " + idType + ", 1, " + pAllowed + ")");
 
                     MySqlDataReader rdr = code.ExecuteReader();
                     this.connection.Close();
