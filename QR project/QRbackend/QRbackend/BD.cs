@@ -15,7 +15,7 @@ namespace QRbackend
 {
     class BD
     {
-        private MySqlConnection connection = new MySqlConnection("Database = inventario_ic; Data Source = localhost; User Id = root; Password=Poder*16");
+        private MySqlConnection connection = new MySqlConnection("Database = inventario_ic; Data Source = localhost; User Id = root; Password=root");
 
 
         public int LogIn(String pWWID, String pPassword)
@@ -387,8 +387,8 @@ namespace QRbackend
                 if (rowList.Count == 0)
                 {
                     this.connection.Close();
-                    AddPerson(pID, pName, pLastName, pType, pAuthorized, pEmail, pPhone);
-                    return VerifyPerson(pID, pName, pLastName, pType, pAuthorized, pEmail, pPhone);
+
+                    return 0;
 
                 }
 
@@ -397,15 +397,15 @@ namespace QRbackend
             {
                 this.connection.Close();
             }
-            AddPhone(pPhone, rowList[0]);
-            AddEmail(pEmail, rowList[0]);
+            //AddPhone(pPhone, rowList[0]);
+            //AddEmail(pEmail, rowList[0]);
 
             return rowList[0];
 
         }
 
 
-        public bool AddPerson(String pID, String pName, String pLastName, int pType, int pAuthorized, String pEmail, String pPhone)
+        public String AddPerson(String pID, String pName, String pLastName, int pType, int pAuthorized, String pEmail, String pPhone)
         {
             try
             {
@@ -416,13 +416,13 @@ namespace QRbackend
                 code.CommandText = ("Insert Into person (ID, personName, personLastName, idType, available, authorized) Values ('" + pID + "', '" + pName + "', '" + pLastName + "', " + pType + ", 1, " + pAuthorized + ") ");
                 code.ExecuteReader();
                 this.connection.Close();
-                return true;
+                return pID;
             }
             finally
             {
                 this.connection.Close();
             }
-            return false;
+            return "";
             
         }
 

@@ -65,9 +65,13 @@ namespace QRbackend
 
 
                 int idPerson = bd.VerifyPerson(id, name, lastname, tipo + 1, allowed, email, phone);
+                if (idPerson == 0)
+                {
+                    String IDperson = bd.AddPerson(id, name, lastname, tipo, allowed, email, phone);
+                }
                 //int idPerson = bd.SearchPerson(id);
-                bd.AddEvent(bd.VerifyDevice(device), idPerson, idBorrowPerson, eventtype, description);
-
+                bd.AddEvent(bd.VerifyDevice(device), bd.VerifyPerson(id, name, lastname, tipo + 1, allowed, email, phone), idBorrowPerson, eventtype, description);
+                
 
                 MessageBox.Show("Successful transaction");
                 this.Hide();

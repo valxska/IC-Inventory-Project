@@ -34,7 +34,7 @@ namespace QRbackend
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            AddDeviceForm frm = new AddDeviceForm(codigoQr,idBorrowPerson);
+            Menu frm = new Menu(idBorrowPerson);
             frm.Show();
             this.Hide();
 
