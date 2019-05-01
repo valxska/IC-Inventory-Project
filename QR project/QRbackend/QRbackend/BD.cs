@@ -15,7 +15,7 @@ namespace QRbackend
 {
     class BD
     {
-        private MySqlConnection connection = new MySqlConnection("Database = inventario_ic; Data Source = localhost; User Id = root; Password=root");
+        private MySqlConnection connection = new MySqlConnection("Database = inventario_ic; Data Source = localhost; User Id = root; Password=Poder*16");
 
 
         public int LogIn(String pWWID, String pPassword)
@@ -583,20 +583,27 @@ namespace QRbackend
 
         public bool AddEvent (int pIdDevice, int pIdPerson, int pBorrowIdPerson, int pIdType, String pDescription)
         {
-            this.connection.Open();
-            
-            MySqlCommand code = new MySqlCommand();
-            code.Connection = this.connection;
-            DateTime momento = DateTime.Now;
-           
+            try {
+                this.connection.Open();
+                MySqlCommand code = new MySqlCommand();
+                code.Connection = this.connection;
+                DateTime momento = DateTime.Now;
 
-            code.CommandText = ("Insert Into event (creationDate, description,idEventType) Values ('" + momento.ToString("yyyy-MM-dd H:mm:ss") + "', '"+pDescription+"','" + pIdType + "')  ");
-            code.ExecuteReader();
-            this.connection.Close();
 
-            int idEvent = GetEvent(momento);
-            AddHistory(idEvent, pIdDevice, pIdPerson, pBorrowIdPerson);
-            return true;
+                code.CommandText = ("Insert Into event (creationDate, description,idEventType) Values ('" + momento.ToString("yyyy-MM-dd H:mm:ss") + "', '" + pDescription + "','" + pIdType + "')  ");
+                code.ExecuteReader();
+                this.connection.Close();
+
+                int idEvent = GetEvent(momento);
+                AddHistory(idEvent, pIdDevice, pIdPerson, pBorrowIdPerson);
+
+                return true;
+            }
+            finally{
+                this.connection.Close();
+            }
+
+            return false;
         }
 
 
@@ -635,16 +642,16 @@ namespace QRbackend
         public bool AddHistory(int pIdEvent, int pIdDevice, int pIdPerson, int pBorrowIdPerson)
         {
             try { 
-            this.connection.Open();
+                this.connection.Open();
             
-            MySqlCommand code = new MySqlCommand();
-            code.Connection = this.connection;
+                MySqlCommand code = new MySqlCommand();
+                code.Connection = this.connection;
 
-            code.CommandText = ("Insert Into history (idEvent,idDevices, idPerson, BorrowIdPerson) Values (" + pIdEvent + "," + pIdDevice + ", "+ pIdPerson+", "+pBorrowIdPerson+") ");
-            code.ExecuteReader();
-            this.connection.Close();
-            return true;
-        }
+                code.CommandText = ("Insert Into history (idEvent,idDevices, idPerson, BorrowIdPerson) Values (" + pIdEvent + "," + pIdDevice + ", "+ pIdPerson+", "+pBorrowIdPerson+") ");
+                code.ExecuteReader();
+                this.connection.Close();
+                return true;
+            }
             finally
             {
                 this.connection.Close();
@@ -769,8 +776,9 @@ namespace QRbackend
 
         }
 
-        public int VerifyPerson(String pId)
-        {
+        
+
+        public int SearchPerson(String pID) {
 
             List<int> rowList = new List<int>();
             try
@@ -781,7 +789,7 @@ namespace QRbackend
 
                 code.Connection = this.connection;
 
-                code.CommandText = ("Select id From person where id = '" + pId + "' ");
+                code.CommandText = ("Select IdPerson from person where ID = '"+ pID +"' ");
 
                 MySqlDataReader rdr = code.ExecuteReader();
 
@@ -796,8 +804,8 @@ namespace QRbackend
                     return -1;
 
                 }
-
             }
+
             finally
             {
                 this.connection.Close();
@@ -805,41 +813,13 @@ namespace QRbackend
             return rowList[0];
 
 
-        }
-
-        public bool AddPerson(String pId, String pName, String pLastname, String pType,int pAllowed)   //
-        {
-            try
-            {
-                MySqlCommand code = new MySqlCommand();
-
-                
-                int idPerson = VerifyPerson(pId);
-  
-                if (idPerson == -1)
-                {
-
-                    int idType = VerifyType(pType);
-                    this.connection.Open();
-                    code.Connection = this.connection;
-
-                    code.CommandText = ("Insert Into person  (id, personname, lpersonlastname, idType, available, authorized) Values ('" + pId + "' , '" + pName + "', " + pLastname + ", " + idType + ", 1, " + pAllowed + ")");
-
-                    MySqlDataReader rdr = code.ExecuteReader();
-                    this.connection.Close();
-
-                }
-   
-                return true;
-            }
-            catch (Exception e)
-            {
-                this.connection.Close();
-
-            }
-            return false;
 
         }
+
+
+
+
+
 
         //public int Update()
         //{

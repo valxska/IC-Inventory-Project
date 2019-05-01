@@ -30,7 +30,7 @@ namespace QRbackend
                 BD bd = new BD();
 
                 int idBorrowPerson = bd.LogIn(wwid, pass);
-
+                MessageBox.Show("El id es de " + idBorrowPerson);
                 if (idBorrowPerson != -1){
                     this.Hide();
                     Menu fm = new Menu(idBorrowPerson);

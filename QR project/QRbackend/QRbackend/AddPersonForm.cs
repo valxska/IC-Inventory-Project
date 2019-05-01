@@ -20,7 +20,7 @@ namespace QRbackend
 
             typebox.Items.Add("Interno");   // 1
             typebox.Items.Add("Externo");    // 2
-            typebox.Items.Add("Administrador");    // 3
+            typebox.Items.Add("Admin");    // 3
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -31,28 +31,19 @@ namespace QRbackend
         private void createbutton_Click(object sender, EventArgs e)
         {
             String nombre = namebox.Text;
-            String tipo = typebox.SelectedItem.ToString();
+            int tipo = typebox.SelectedIndex;
             String apellido = lastnamebox.Text;
-            String telefono = phonebox.Text;
             String email = emailbox.Text;
             String id = idbox.Text;
             String phone = phonebox.Text;
-            int allowed;
-            if(tipo == "Interno")
+            int allowed=0;
+
+            if (tipo == 2)
             {
-                tipo = "Interno";
-                allowed = 0;
-            }if (tipo == "Externo")
-            {
-                tipo = "Externo";
-                allowed = 0;
-            }
-            else
-            {
-                tipo = "Administrador";
                 allowed = 1;
             }
-            bd.AddPerson(id,nombre,apellido,tipo,allowed);
+
+            bd.AddPerson(id,nombre,apellido,tipo,allowed,email, phone);
 
 
         }

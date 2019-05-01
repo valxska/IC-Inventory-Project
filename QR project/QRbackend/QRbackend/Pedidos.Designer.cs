@@ -56,7 +56,6 @@
             this.label1.Size = new System.Drawing.Size(31, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -67,7 +66,6 @@
             this.label2.Size = new System.Drawing.Size(64, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -98,7 +96,6 @@
             this.Phone.Size = new System.Drawing.Size(71, 27);
             this.Phone.TabIndex = 4;
             this.Phone.Text = "Phone";
-            this.Phone.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -109,7 +106,6 @@
             this.label6.Size = new System.Drawing.Size(61, 27);
             this.label6.TabIndex = 3;
             this.label6.Text = "Type ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -163,7 +159,6 @@
             this.label8.Size = new System.Drawing.Size(134, 42);
             this.label8.TabIndex = 14;
             this.label8.Text = "Request";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // btn_Back
             // 
@@ -206,7 +201,6 @@
             this.comboType.Name = "comboType";
             this.comboType.Size = new System.Drawing.Size(214, 28);
             this.comboType.TabIndex = 19;
-            this.comboType.SelectedIndexChanged += new System.EventHandler(this.comboType_SelectedIndexChanged);
             // 
             // comboBoxID
             // 
@@ -217,7 +211,6 @@
             this.comboBoxID.Name = "comboBoxID";
             this.comboBoxID.Size = new System.Drawing.Size(214, 28);
             this.comboBoxID.TabIndex = 20;
-            this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
             // Pedidos
             // 
@@ -245,7 +238,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Pedidos";
             this.Text = "datosPrestamo";
-            this.Load += new System.EventHandler(this.Pedidos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

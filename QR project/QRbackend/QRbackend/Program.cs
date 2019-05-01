@@ -21,25 +21,29 @@ namespace QRbackend
 
             
 
-/*
-            BD PruebaDeBD = new BD();
-            //int x = PruebaDeBD.AddDevice("ABCDEFG", "FDKMF83", 20000, "Prueba Add device", "Samsung", "Bueno", "Computadora");
-            int x = PruebaDeBD.VerifyBrand("Samsung");
 
-            //bool x = PruebaDeBD.AddEvent(1, 2, 2, 1, "Rawayana");
-            MessageBox.Show(x.ToString());
-            //bool x = PruebaDeBD.AddDevice("ABCDh", "HB24I1", 12000, "Esta muy lindo", "Samsung", "Malo", "Electronica");
+            //BD PruebaDeBD = new BD();
+            //int x = PruebaDeBD.SearchPerson("878");
+            //MessageBox.Show(x.ToString());
 
-            //MessageBox.Show(x[0].ToString());
 
-            /*if (x) {
 
-                MessageBox.Show("Funcionó");  //Se insertó
-            }
-            else
-            {
-                MessageBox.Show("No funcionó");  // No se insertó porque ya existía
-            }*/
+            //int x = PruebaDeBD.VerifyBrand("Samsung");
+            /*
+                        //bool x = PruebaDeBD.AddEvent(1, 2, 2, 1, "Rawayana");
+                        MessageBox.Show(x.ToString());
+                        //bool x = PruebaDeBD.AddDevice("ABCDh", "HB24I1", 12000, "Esta muy lindo", "Samsung", "Malo", "Electronica");
+
+                        //MessageBox.Show(x[0].ToString());
+
+                        /*if (x) {
+
+                            MessageBox.Show("Funcionó");  //Se insertó
+                        }
+                        else
+                        {
+                            MessageBox.Show("No funcionó");  // No se insertó porque ya existía
+                        }*/
 
 
         }

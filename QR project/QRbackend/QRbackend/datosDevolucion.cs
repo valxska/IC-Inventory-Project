@@ -26,7 +26,7 @@ namespace QRbackend
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu fm = new Menu(idBorrowPerson);
+            Lector fm = new Lector (false, idBorrowPerson);
             fm.Show();
         }
 
@@ -45,7 +45,7 @@ namespace QRbackend
                 description = text_Description.Text;
            
 
-                int idPerson = bd.VerifyPerson(id);
+                int idPerson = bd.SearchPerson(id);
                 bd.AddEvent(bd.VerifyDevice(device), idPerson, idBorrowPerson, eventtype, description);
 
                 MessageBox.Show("Successful transaction");

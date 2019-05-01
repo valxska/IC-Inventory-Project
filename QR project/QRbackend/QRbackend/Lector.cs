@@ -85,11 +85,24 @@ namespace QRbackend
             txtQR.Text = data;
             if (txtQR.Text != String.Empty) {
                 timer1.Stop();
-                this.Hide();
                 finalFrame.Stop();
+                this.Hide();
+               
 
-                Pedidos pedido = new Pedidos(mode, txtQR.Text, idBorrowPerson);   // El lector siempre se dirige a pedido y deberia tambien mandar a return
-                pedido.Show();
+                if (mode)
+                {
+                    Pedidos pedido = new Pedidos(txtQR.Text, idBorrowPerson);   
+                    pedido.Show();
+
+                }
+                else
+                {
+
+                    DatosDevolucion dev = new DatosDevolucion(idBorrowPerson);
+                    dev.Show();
+                }
+
+                
             }
         }
 

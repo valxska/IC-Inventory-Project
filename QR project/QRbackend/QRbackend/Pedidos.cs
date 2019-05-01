@@ -12,14 +12,13 @@ namespace QRbackend
 {
     public partial class Pedidos : Form
     {
-        private bool mode;
         private BD bd;
         private string device;
         private int idBorrowPerson;
-        public Pedidos(bool mode, string pdevice, int idBorrowPerson)
+
+        public Pedidos(string pdevice, int idBorrowPerson)
         {
             InitializeComponent();
-            this.mode = mode;
             this.idBorrowPerson = idBorrowPerson;
             device = pdevice;
             bd = new BD();
@@ -28,31 +27,7 @@ namespace QRbackend
 
             comboType.Items.Add("Interno");   // 0
             comboType.Items.Add("Externo");    // 1
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
+            comboType.Items.Add("Admin");
 
         }
 
@@ -67,52 +42,47 @@ namespace QRbackend
             string description = String.Empty;
             string type = String.Empty;
 
-            if (comboBoxID.Text != id && text_Name.Text != name && text_LastName.Text != lastname && text_Phone.Text != phone && text_Email.Text != email && text_Description.Text != description && comboType.Text != type) ;
+            if (comboBoxID.Text == id || text_Name.Text == name || text_LastName.Text == lastname || text_Phone.Text == phone || text_Email.Text == email || text_Description.Text == description || comboType.Text == type) 
             {
-                int eventtype = mode ? 2 : 1;
-                id = comboBoxID.Text;
+                MessageBox.Show("Complete the information");
 
+            }
+
+            else{
+                int eventtype = 1;
+                id = comboBoxID.Text;
                 name = text_Name.Text;
                 lastname = text_LastName.Text;
                 phone = text_Phone.Text;
                 email = text_Email.Text;
-                description = text_Description.Text;
-                type = comboType.Text;
+                description = text_Description.Text;           
+                int allowed = 0;
+                int tipo = comboType.SelectedIndex;
 
-                int idPerson = bd.VerifyPerson(id, name, lastname, comboType.SelectedIndex +1 , 0, email, phone);
+                if (tipo == 2) {
+                    allowed = 1;
+                }
+
+
+                int idPerson = bd.VerifyPerson(id, name, lastname, tipo + 1, allowed, email, phone);
+                //int idPerson = bd.SearchPerson(id);
                 bd.AddEvent(bd.VerifyDevice(device), idPerson, idBorrowPerson, eventtype, description);
+
 
                 MessageBox.Show("Successful transaction");
                 this.Hide();
                 Menu fm = new Menu(idBorrowPerson);
                 fm.Show();
             }
-
             
-
             
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu fm = new Menu(idBorrowPerson);
-            fm.Show();
-        }
-
-        private void comboType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Pedidos_Load(object sender, EventArgs e)
-        {
-
+            Lector lector = new Lector(true,idBorrowPerson);
+            lector.Show();
         }
     }
 }

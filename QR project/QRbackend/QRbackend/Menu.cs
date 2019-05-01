@@ -22,14 +22,14 @@ namespace QRbackend
         private void btn_prestamo_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Lector lector = new Lector(false, idBorrowPerson);
+            Lector lector = new Lector(true, idBorrowPerson);
             lector.Show();
         }
 
         private void btn_devolucion_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Lector lector = new Lector(true, idBorrowPerson);
+            Lector lector = new Lector(false, idBorrowPerson);
             lector.Show();
         }
 
@@ -53,6 +53,13 @@ namespace QRbackend
             AddPersonForm fm = new AddPersonForm();
             fm.Show();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LogIn fm = new LogIn();
+            fm.Show();
         }
     }
 }
