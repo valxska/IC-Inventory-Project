@@ -42,6 +42,7 @@
             this.typebox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.btn_regresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -97,11 +98,11 @@
             // createbutton
             // 
             this.createbutton.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.createbutton.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createbutton.Location = new System.Drawing.Point(681, 475);
+            this.createbutton.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createbutton.Location = new System.Drawing.Point(706, 496);
             this.createbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.createbutton.Name = "createbutton";
-            this.createbutton.Size = new System.Drawing.Size(131, 50);
+            this.createbutton.Size = new System.Drawing.Size(146, 38);
             this.createbutton.TabIndex = 5;
             this.createbutton.Text = "Create";
             this.createbutton.UseVisualStyleBackColor = false;
@@ -183,12 +184,26 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Add Person";
             // 
+            // btn_regresar
+            // 
+            this.btn_regresar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btn_regresar.Font = new System.Drawing.Font("Intel Clear Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_regresar.Location = new System.Drawing.Point(99, 496);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(146, 38);
+            this.btn_regresar.TabIndex = 14;
+            this.btn_regresar.Text = "Back";
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
             // AddPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.typebox);
@@ -227,5 +242,6 @@
         private System.Windows.Forms.ComboBox typebox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_regresar;
     }
 }

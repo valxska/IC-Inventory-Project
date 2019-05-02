@@ -39,7 +39,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(680, 36);
+            this.button1.Location = new System.Drawing.Point(607, 36);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 56);
@@ -52,7 +52,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button2.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(398, 36);
+            this.button2.Location = new System.Drawing.Point(285, 36);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 56);
@@ -65,18 +65,18 @@
             // 
             this.dataGridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridData.Enabled = false;
-            this.dataGridData.Location = new System.Drawing.Point(134, 118);
+            this.dataGridData.Location = new System.Drawing.Point(12, 117);
             this.dataGridData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridData.Name = "dataGridData";
             this.dataGridData.RowTemplate.Height = 28;
-            this.dataGridData.Size = new System.Drawing.Size(1067, 418);
+            this.dataGridData.Size = new System.Drawing.Size(1018, 418);
             this.dataGridData.TabIndex = 3;
             // 
             // btn_regresar
             // 
             this.btn_regresar.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btn_regresar.Font = new System.Drawing.Font("Intel Clear Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_regresar.Location = new System.Drawing.Point(22, 20);
+            this.btn_regresar.Location = new System.Drawing.Point(24, 20);
             this.btn_regresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(102, 38);
@@ -90,7 +90,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1288, 546);
+            this.ClientSize = new System.Drawing.Size(1041, 546);
             this.Controls.Add(this.btn_regresar);
             this.Controls.Add(this.dataGridData);
             this.Controls.Add(this.button2);

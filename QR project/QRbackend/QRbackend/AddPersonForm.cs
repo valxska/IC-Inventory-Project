@@ -56,5 +56,12 @@ namespace QRbackend
 
 
         }
+
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu fm = new Menu(idBorrowPerson);
+            fm.Show();
+        }
     }
 }

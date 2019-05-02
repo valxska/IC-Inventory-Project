@@ -119,7 +119,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(700, 469);
+            this.ClientSize = new System.Drawing.Size(700, 450);
             this.Controls.Add(this.addpersonbutton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_admin);
