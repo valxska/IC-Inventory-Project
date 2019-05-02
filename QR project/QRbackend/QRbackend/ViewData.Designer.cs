@@ -63,8 +63,12 @@
             // 
             // dataGridData
             // 
+            this.dataGridData.AllowDrop = true;
+            this.dataGridData.AllowUserToAddRows = false;
+            this.dataGridData.AllowUserToDeleteRows = false;
+            this.dataGridData.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dataGridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridData.Enabled = false;
+            this.dataGridData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dataGridData.Location = new System.Drawing.Point(12, 117);
             this.dataGridData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridData.Name = "dataGridData";

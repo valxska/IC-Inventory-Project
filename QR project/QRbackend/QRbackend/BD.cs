@@ -818,23 +818,7 @@ namespace QRbackend
         }
 
 
-
-
-
-
-        //public int Update()
-        //{
-
-        //    MySqlCommand code = new MySqlCommand();
-        //    this.connection.Open();
-
-        //    code.Connection = this.connection;
-
-        //    //code.CommandText = ("UPDATE );
-
-
-        //}
-
+               
 
     }
 }
