@@ -120,7 +120,7 @@
             // 
             // emailbox
             // 
-            this.emailbox.Location = new System.Drawing.Point(211, 163);
+            this.emailbox.Location = new System.Drawing.Point(585, 156);
             this.emailbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.emailbox.Multiline = true;
             this.emailbox.Name = "emailbox";
@@ -138,7 +138,7 @@
             // 
             // namebox
             // 
-            this.namebox.Location = new System.Drawing.Point(585, 166);
+            this.namebox.Location = new System.Drawing.Point(211, 154);
             this.namebox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.namebox.Multiline = true;
             this.namebox.Name = "namebox";

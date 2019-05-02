@@ -36,6 +36,7 @@ namespace QRbackend
         {
             String nombre = namebox.Text;
             int tipo = typebox.SelectedIndex;
+            tipo = tipo +1;
             String apellido = lastnamebox.Text;
             String email = emailbox.Text;
             String id = idbox.Text;
@@ -48,6 +49,10 @@ namespace QRbackend
             }
 
             bd.VerifyPerson(id,nombre,apellido,tipo,allowed,email, phone);
+
+            int id1 = bd.SearchPerson(id);
+            bd.VerifyEmail(email, id1);
+            bd.VerifyPhone(phone, id1);
 
             MessageBox.Show("Successful transaction");
             this.Hide();

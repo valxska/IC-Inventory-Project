@@ -416,6 +416,9 @@ namespace QRbackend
                 code.CommandText = ("Insert Into person (ID, personName, personLastName, idType, available, authorized) Values ('" + pID + "', '" + pName + "', '" + pLastName + "', " + pType + ", 1, " + pAuthorized + ") ");
                 code.ExecuteReader();
                 this.connection.Close();
+
+                
+
                 return pID;
             }
 
