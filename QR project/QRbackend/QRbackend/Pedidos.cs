@@ -65,15 +65,8 @@ namespace QRbackend
 
 
                 int idPerson = bd.VerifyPerson(id, name, lastname, tipo + 1, allowed, email, phone);
-                //VerifyPerson retorna 0 si no encontro Id o el id si encontro uno
-                if (idPerson == 0)
-                {
-                    String IDperson = bd.AddPerson(id, name, lastname, tipo, allowed, email, phone);
-                }
-                //int idPerson = bd.SearchPerson(id);
-                //En caso de que no este, entra al if y al salir ya esta insertado retornando el pId si se inserto, si no, retorna un ""
-                bd.AddEvent(bd.VerifyDevice(device), bd.VerifyPerson(id, name, lastname, tipo + 1, allowed, email, phone), idBorrowPerson, eventtype, description);
-                
+                bd.AddEvent(bd.VerifyDevice(device), idPerson, idBorrowPerson, eventtype, description);
+
 
                 MessageBox.Show("Successful transaction");
                 this.Hide();
@@ -89,6 +82,16 @@ namespace QRbackend
             this.Hide();
             Lector lector = new Lector(true,idBorrowPerson);
             lector.Show();
+        }
+
+        private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

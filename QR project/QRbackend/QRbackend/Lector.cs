@@ -98,7 +98,7 @@ namespace QRbackend
                 else
                 {
 
-                    DatosDevolucion dev = new DatosDevolucion(idBorrowPerson);
+                    DatosDevolucion dev = new DatosDevolucion(txtQR.Text ,idBorrowPerson);
                     dev.Show();
                 }
 

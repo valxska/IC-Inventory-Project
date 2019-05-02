@@ -37,13 +37,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.comboType = new System.Windows.Forms.ComboBox();
+            this.text_Phone = new System.Windows.Forms.TextBox();
+            this.text_LastName = new System.Windows.Forms.TextBox();
+            this.text_Name = new System.Windows.Forms.TextBox();
+            this.Phone = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Send
             // 
             this.btn_Send.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_Send.Font = new System.Drawing.Font("Intel Clear Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Send.Location = new System.Drawing.Point(518, 318);
+            this.btn_Send.Location = new System.Drawing.Point(501, 463);
             this.btn_Send.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Send.Name = "btn_Send";
             this.btn_Send.Size = new System.Drawing.Size(94, 40);
@@ -56,7 +64,7 @@
             // 
             this.btn_Back.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_Back.Font = new System.Drawing.Font("Intel Clear Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Back.Location = new System.Drawing.Point(132, 318);
+            this.btn_Back.Location = new System.Drawing.Point(115, 463);
             this.btn_Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(94, 40);
@@ -76,7 +84,7 @@
             // 
             // text_Description
             // 
-            this.text_Description.Location = new System.Drawing.Point(339, 200);
+            this.text_Description.Location = new System.Drawing.Point(339, 353);
             this.text_Description.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.text_Description.Name = "text_Description";
             this.text_Description.Size = new System.Drawing.Size(214, 65);
@@ -85,7 +93,7 @@
             // 
             // text_Email
             // 
-            this.text_Email.Location = new System.Drawing.Point(339, 154);
+            this.text_Email.Location = new System.Drawing.Point(339, 306);
             this.text_Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.text_Email.Name = "text_Email";
             this.text_Email.Size = new System.Drawing.Size(214, 26);
@@ -95,7 +103,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(158, 200);
+            this.label7.Location = new System.Drawing.Point(158, 350);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 27);
             this.label7.TabIndex = 27;
@@ -105,7 +113,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(158, 156);
+            this.label4.Location = new System.Drawing.Point(158, 308);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 27);
             this.label4.TabIndex = 26;
@@ -132,11 +140,93 @@
             this.label8.TabIndex = 35;
             this.label8.Text = "Return";
             // 
+            // comboType
+            // 
+            this.comboType.FormattingEnabled = true;
+            this.comboType.Location = new System.Drawing.Point(339, 223);
+            this.comboType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboType.Name = "comboType";
+            this.comboType.Size = new System.Drawing.Size(214, 28);
+            this.comboType.TabIndex = 43;
+            // 
+            // text_Phone
+            // 
+            this.text_Phone.Location = new System.Drawing.Point(339, 263);
+            this.text_Phone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.text_Phone.Name = "text_Phone";
+            this.text_Phone.Size = new System.Drawing.Size(214, 26);
+            this.text_Phone.TabIndex = 42;
+            // 
+            // text_LastName
+            // 
+            this.text_LastName.Location = new System.Drawing.Point(339, 186);
+            this.text_LastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.text_LastName.Name = "text_LastName";
+            this.text_LastName.Size = new System.Drawing.Size(214, 26);
+            this.text_LastName.TabIndex = 41;
+            // 
+            // text_Name
+            // 
+            this.text_Name.Location = new System.Drawing.Point(339, 149);
+            this.text_Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.text_Name.Name = "text_Name";
+            this.text_Name.Size = new System.Drawing.Size(214, 26);
+            this.text_Name.TabIndex = 40;
+            // 
+            // Phone
+            // 
+            this.Phone.AutoSize = true;
+            this.Phone.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Phone.Location = new System.Drawing.Point(158, 264);
+            this.Phone.Name = "Phone";
+            this.Phone.Size = new System.Drawing.Size(71, 27);
+            this.Phone.TabIndex = 39;
+            this.Phone.Text = "Phone";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(158, 223);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 27);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Type ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(158, 187);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 27);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "Last Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(158, 149);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 27);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Name";
+            // 
             // DatosDevolucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 398);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(740, 549);
+            this.Controls.Add(this.comboType);
+            this.Controls.Add(this.text_Phone);
+            this.Controls.Add(this.text_LastName);
+            this.Controls.Add(this.text_Name);
+            this.Controls.Add(this.Phone);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboB);
             this.Controls.Add(this.text_Description);
@@ -164,5 +254,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboType;
+        private System.Windows.Forms.TextBox text_Phone;
+        private System.Windows.Forms.TextBox text_LastName;
+        private System.Windows.Forms.TextBox text_Name;
+        private System.Windows.Forms.Label Phone;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

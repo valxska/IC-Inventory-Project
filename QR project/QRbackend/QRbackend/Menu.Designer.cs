@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_exit = new System.Windows.Forms.Button();
             this.btn_admin = new System.Windows.Forms.Button();
             this.btn_datos = new System.Windows.Forms.Button();
             this.btn_devolucion = new System.Windows.Forms.Button();
@@ -37,19 +36,11 @@
             this.addpersonbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btn_exit
-            // 
-            this.btn_exit.Location = new System.Drawing.Point(0, 0);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(75, 22);
-            this.btn_exit.TabIndex = 0;
-            // 
             // btn_admin
             // 
             this.btn_admin.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_admin.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_admin.Location = new System.Drawing.Point(393, 199);
+            this.btn_admin.Location = new System.Drawing.Point(393, 234);
             this.btn_admin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_admin.Name = "btn_admin";
             this.btn_admin.Size = new System.Drawing.Size(207, 55);
@@ -75,7 +66,7 @@
             // 
             this.btn_devolucion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_devolucion.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_devolucion.Location = new System.Drawing.Point(115, 199);
+            this.btn_devolucion.Location = new System.Drawing.Point(115, 234);
             this.btn_devolucion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_devolucion.Name = "btn_devolucion";
             this.btn_devolucion.Size = new System.Drawing.Size(207, 55);
@@ -112,14 +103,14 @@
             // 
             // addpersonbutton
             // 
-            this.addpersonbutton.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.addpersonbutton.Font = new System.Drawing.Font("Intel Clear Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addpersonbutton.Location = new System.Drawing.Point(250, 278);
+            this.addpersonbutton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.addpersonbutton.Font = new System.Drawing.Font("Intel Clear Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addpersonbutton.Location = new System.Drawing.Point(257, 333);
             this.addpersonbutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addpersonbutton.Name = "addpersonbutton";
-            this.addpersonbutton.Size = new System.Drawing.Size(179, 39);
+            this.addpersonbutton.Size = new System.Drawing.Size(207, 55);
             this.addpersonbutton.TabIndex = 10;
-            this.addpersonbutton.Text = "AddPerson";
+            this.addpersonbutton.Text = "Add Person";
             this.addpersonbutton.UseVisualStyleBackColor = false;
             this.addpersonbutton.Click += new System.EventHandler(this.addpersonbutton_Click);
             // 
@@ -128,10 +119,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(634, 330);
+            this.ClientSize = new System.Drawing.Size(700, 469);
             this.Controls.Add(this.addpersonbutton);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_admin);
             this.Controls.Add(this.btn_datos);
             this.Controls.Add(this.btn_devolucion);
@@ -144,8 +134,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_admin;
         private System.Windows.Forms.Button btn_datos;
         private System.Windows.Forms.Button btn_devolucion;

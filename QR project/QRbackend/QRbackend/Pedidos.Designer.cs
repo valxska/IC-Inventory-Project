@@ -162,6 +162,7 @@
             // 
             // btn_Back
             // 
+            this.btn_Back.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_Back.Font = new System.Drawing.Font("Intel Clear Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Back.Location = new System.Drawing.Point(112, 418);
             this.btn_Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -169,11 +170,12 @@
             this.btn_Back.Size = new System.Drawing.Size(94, 40);
             this.btn_Back.TabIndex = 16;
             this.btn_Back.Text = "Back";
-            this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Back.UseVisualStyleBackColor = false;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
             // btn_Send
             // 
+            this.btn_Send.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_Send.Font = new System.Drawing.Font("Intel Clear Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Send.Location = new System.Drawing.Point(498, 418);
             this.btn_Send.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -181,7 +183,7 @@
             this.btn_Send.Size = new System.Drawing.Size(94, 40);
             this.btn_Send.TabIndex = 17;
             this.btn_Send.Text = "Send";
-            this.btn_Send.UseVisualStyleBackColor = true;
+            this.btn_Send.UseVisualStyleBackColor = false;
             this.btn_Send.Click += new System.EventHandler(this.button1_Click);
             // 
             // text_Description
@@ -201,6 +203,7 @@
             this.comboType.Name = "comboType";
             this.comboType.Size = new System.Drawing.Size(214, 28);
             this.comboType.TabIndex = 19;
+            this.comboType.SelectedIndexChanged += new System.EventHandler(this.comboType_SelectedIndexChanged);
             // 
             // comboBoxID
             // 
@@ -211,6 +214,7 @@
             this.comboBoxID.Name = "comboBoxID";
             this.comboBoxID.Size = new System.Drawing.Size(214, 28);
             this.comboBoxID.TabIndex = 20;
+            this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
             // Pedidos
             // 

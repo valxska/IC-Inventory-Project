@@ -15,7 +15,7 @@ namespace QRbackend
 {
     class BD
     {
-        private MySqlConnection connection = new MySqlConnection("Database = inventario_ic; Data Source = localhost; User Id = root; Password=root");
+        private MySqlConnection connection = new MySqlConnection("Database = inventario_ic; Data Source = localhost; User Id = root; Password=Poder*16");
 
 
         public int LogIn(String pWWID, String pPassword)
@@ -397,8 +397,7 @@ namespace QRbackend
             {
                 this.connection.Close();
             }
-            //AddPhone(pPhone, rowList[0]);
-            //AddEmail(pEmail, rowList[0]);
+            
 
             return rowList[0];
 
@@ -418,6 +417,7 @@ namespace QRbackend
                 this.connection.Close();
                 return pID;
             }
+
             finally
             {
                 this.connection.Close();
