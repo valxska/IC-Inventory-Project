@@ -13,9 +13,13 @@ namespace QRbackend
     public partial class AddPersonForm : Form
     {
         private BD bd;
-        public AddPersonForm()
+        private int idBorrowPerson;
+
+        public AddPersonForm(int idBorrowPerson)
         {
             InitializeComponent();
+            this.idBorrowPerson = idBorrowPerson;
+
             bd = new BD();
 
             typebox.Items.Add("Interno");   // 1
@@ -43,7 +47,12 @@ namespace QRbackend
                 allowed = 1;
             }
 
-            bd.AddPerson(id,nombre,apellido,tipo,allowed,email, phone);
+            bd.VerifyPerson(id,nombre,apellido,tipo,allowed,email, phone);
+
+            MessageBox.Show("Successful transaction");
+            this.Hide();
+            Menu fm = new Menu(idBorrowPerson);
+            fm.Show();
 
 
         }

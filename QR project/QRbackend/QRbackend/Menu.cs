@@ -50,7 +50,7 @@ namespace QRbackend
         private void addpersonbutton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AddPersonForm fm = new AddPersonForm();
+            AddPersonForm fm = new AddPersonForm(idBorrowPerson);
             fm.Show();
 
         }

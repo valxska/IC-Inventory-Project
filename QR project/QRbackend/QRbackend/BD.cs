@@ -387,6 +387,7 @@ namespace QRbackend
                 if (rowList.Count == 0)
                 {
                     this.connection.Close();
+                    AddPerson(pID, pName, pLastName, pType, pAuthorized, pEmail, pPhone);
 
                     return 0;
 
